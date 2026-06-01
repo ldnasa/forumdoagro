@@ -146,44 +146,42 @@ function initCountUp() {
    Contador regressivo + barra sticky
    -------------------------------------------------------------------------- */
 function initCountdown() {
-  const bar = document.getElementById("countdown-bar");
-  if (!bar) return;
-
-  // botão de ingresso condicional à flag vendasAbertas
-  const btn = document.getElementById("countdown-cta");
-  if (btn) btn.classList.toggle("hidden", !vendasAbertas);
-
-  const elDays = document.getElementById("cd-days");
-  const elHours = document.getElementById("cd-hours");
-  const elMin = document.getElementById("cd-min");
-  const elSec = document.getElementById("cd-sec");
   const target = new Date(DATA_EVENTO).getTime();
-
   const pad = (n) => String(n).padStart(2, "0");
+  // atualiza todos os dígitos (barra do topo + faixa de baixo) de uma vez
+  const cells = document.querySelectorAll("[data-cd]");
+  if (!cells.length) return;
+
+  // botão de ingresso do TOPO condicional à flag (a faixa de baixo tem CTA fixo)
+  const topBtn = document.getElementById("countdown-cta");
+  if (topBtn) topBtn.classList.toggle("hidden", !vendasAbertas);
+
   const tick = () => {
-    const diff = target - Date.now();
-    if (diff <= 0) {
-      [elDays, elHours, elMin, elSec].forEach((e) => e && (e.textContent = "00"));
-      return;
-    }
-    const d = Math.floor(diff / 86400000);
-    const h = Math.floor((diff % 86400000) / 3600000);
-    const m = Math.floor((diff % 3600000) / 60000);
-    const s = Math.floor((diff % 60000) / 1000);
-    if (elDays) elDays.textContent = pad(d);
-    if (elHours) elHours.textContent = pad(h);
-    if (elMin) elMin.textContent = pad(m);
-    if (elSec) elSec.textContent = pad(s);
+    const diff = Math.max(0, target - Date.now());
+    const vals = {
+      days: Math.floor(diff / 86400000),
+      hours: Math.floor((diff % 86400000) / 3600000),
+      min: Math.floor((diff % 3600000) / 60000),
+      sec: Math.floor((diff % 60000) / 1000),
+    };
+    cells.forEach((el) => (el.textContent = pad(vals[el.dataset.cd] || 0)));
   };
   tick();
   setInterval(tick, 1000);
 
-  // a barra aparece logo nos primeiros scrolls
-  const onScroll = () => {
-    bar.classList.toggle("is-active", window.scrollY > 80);
+  // STATE CHANGE: a barra fina do topo some quando a faixa em destaque
+  // (acima do footer) entra na tela - o contador "desce" e vira faixa.
+  const bar = document.getElementById("countdown-bar");
+  if (!bar) return;
+  const band = document.getElementById("countdown-cta-band");
+  const updateBar = () => {
+    // faixa "apareceu" quando seu topo sobe acima de 75% da altura da tela
+    const bandVisible =
+      band && band.getBoundingClientRect().top < window.innerHeight * 0.75;
+    bar.classList.toggle("is-active", window.scrollY > 80 && !bandVisible);
   };
-  onScroll();
-  window.addEventListener("scroll", onScroll, { passive: true });
+  updateBar();
+  window.addEventListener("scroll", updateBar, { passive: true });
 }
 
 /* --------------------------------------------------------------------------
