@@ -1,0 +1,14 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+
+# Dependências (projeto é vanilla, mas por segurança)
+node_modules/
+
+# Ferramentas locais do Claude Code (config de preview)
+.claude/

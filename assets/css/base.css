@@ -1,0 +1,230 @@
+/* ==========================================================================
+   Fórum do Agronegócio 2027 - estilos base compartilhados
+   Tokens do Figma estão no tailwind.config inline de cada página.
+   Aqui ficam: fontes, animações (com prefers-reduced-motion),
+   sistema de placeholders cinza e ajustes que o Tailwind CDN não cobre.
+   ========================================================================== */
+
+:root {
+  --accent: #0e2325;
+  --secondary: #285d60;
+  --primary: #7ab61f;
+  --mint: #f3faf9;
+  --background: #eef5f4;
+  --lime: #9feb2c;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* compensa o header fixo ao pular para âncoras */
+  scroll-padding-top: 120px;
+}
+
+body {
+  font-family: "Bricolage Grotesque", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.font-display {
+  font-family: "Special Gothic Expanded One", system-ui, sans-serif;
+}
+
+/* --------------------------------------------------------------------------
+   Sistema de placeholders cinza (sinaliza assets que o Caio troca depois).
+   Uso: <div class="ph" data-ph="Foto edição 2024"></div>
+   ou em <img class="ph-img" onerror="..."> com fallback.
+   -------------------------------------------------------------------------- */
+.ph {
+  position: relative;
+  background:
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, .03) 0 12px, transparent 12px 24px),
+    linear-gradient(135deg, #285d60, #0e2325);
+  overflow: hidden;
+  isolation: isolate;
+}
+.ph::after {
+  content: attr(data-ph);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  text-align: center;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .02em;
+  color: rgba(243, 250, 249, .72);
+  text-transform: uppercase;
+}
+/* variante clara para fundos claros */
+.ph--light {
+  background:
+    repeating-linear-gradient(45deg, rgba(14, 35, 37, .03) 0 12px, transparent 12px 24px),
+    linear-gradient(135deg, #e2e8f0, #cbd5e1);
+}
+.ph--light::after { color: rgba(40, 93, 96, .65); }
+
+/* logo placeholder (caixa branca com texto "logo ipsum") */
+.ph-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #94a3b8;
+  letter-spacing: .01em;
+}
+
+/* --------------------------------------------------------------------------
+   Hero - vídeo de fundo + ken burns no poster enquanto carrega
+   -------------------------------------------------------------------------- */
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+/* fundo de segurança caso o vídeo dummy não carregue */
+.hero-fallback {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(120% 80% at 70% 10%, rgba(122, 182, 31, .28), transparent 60%),
+    linear-gradient(135deg, #285d60, #0e2325 70%);
+}
+.ken-burns { animation: kenBurns 20s ease-in-out infinite alternate; }
+@keyframes kenBurns {
+  from { transform: scale(1); }
+  to   { transform: scale(1.08); }
+}
+
+/* --------------------------------------------------------------------------
+   Reveal on scroll (fade-in / slide-up) via IntersectionObserver (main.js)
+   -------------------------------------------------------------------------- */
+/* reveal via animation (não transition) para não interferir nas transições
+   de hover/cor dos próprios elementos revelados */
+.reveal {
+  opacity: 0;
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  animation: revealUp .7s cubic-bezier(.16, 1, .3, 1) both;
+}
+.reveal[data-delay="1"].is-visible { animation-delay: .08s; }
+.reveal[data-delay="2"].is-visible { animation-delay: .16s; }
+.reveal[data-delay="3"].is-visible { animation-delay: .24s; }
+.reveal[data-delay="4"].is-visible { animation-delay: .32s; }
+@keyframes revealUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* --------------------------------------------------------------------------
+   Contador regressivo - barra fina sticky sob o header
+   -------------------------------------------------------------------------- */
+.countdown-bar {
+  transform: translateY(-130%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform .4s cubic-bezier(.16, 1, .3, 1), opacity .3s ease, visibility .3s ease;
+}
+.countdown-bar.is-active {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* --------------------------------------------------------------------------
+   Cards - hover
+   -------------------------------------------------------------------------- */
+.card-hover {
+  transition: transform .35s cubic-bezier(.16, 1, .3, 1), box-shadow .35s ease;
+}
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(14, 35, 37, .16);
+}
+
+/* --------------------------------------------------------------------------
+   Modal (palestrantes / programação)
+   -------------------------------------------------------------------------- */
+.modal {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s ease, visibility .3s ease;
+}
+.modal.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+.modal__panel {
+  transform: translateY(16px) scale(.98);
+  transition: transform .3s cubic-bezier(.16, 1, .3, 1);
+}
+.modal.is-open .modal__panel {
+  transform: none;
+}
+
+/* --------------------------------------------------------------------------
+   Toggle de patrocinadores A/B
+   -------------------------------------------------------------------------- */
+.sponsors-view { display: none; }
+.sponsors-view.is-active { display: block; }
+.numbers-view { display: none; }
+.numbers-view.is-active { display: block; }
+.toggle-btn { transition: background-color .25s ease, color .25s ease; }
+
+/* acordeão da programação */
+.acc-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease;
+}
+.acc-item.is-open .acc-body { max-height: 600px; }
+.acc-item.is-open .acc-chevron { transform: rotate(180deg); }
+.acc-chevron { transition: transform .3s ease; }
+
+/* --------------------------------------------------------------------------
+   Botão INGRESSOS - formato de ticket (notches nas laterais), do Figma.
+   Mantém o token verde (bg-primary); os notches recortam revelando o fundo.
+   -------------------------------------------------------------------------- */
+.btn-ticket {
+  --notch: 9px;
+  border-radius: 9px;
+  -webkit-mask:
+    radial-gradient(circle var(--notch) at left center, #0000 var(--notch), #000 calc(var(--notch) + 0.5px)),
+    radial-gradient(circle var(--notch) at right center, #0000 var(--notch), #000 calc(var(--notch) + 0.5px));
+  -webkit-mask-composite: source-in;
+          mask-composite: intersect;
+}
+
+/* mobile nav */
+.mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .35s ease;
+}
+.mobile-menu.is-open { max-height: 380px; }
+
+/* --------------------------------------------------------------------------
+   Respeitar prefers-reduced-motion: desliga todas as animações
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+  .ken-burns { animation: none; }
+}
