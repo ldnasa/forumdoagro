@@ -19,30 +19,30 @@
       theme: {
         extend: {
           colors: {
-            primary: "#7ab61f",
-            secondary: "#285d60",
-            accent: "#0e2325",
-            background: "#eef5f4",
-            mint: "#f3faf9",
+            primary: "#8D4A2A",
+            secondary: "#3A6F98",
+            accent: "#04223A",
+            background: "#EEF3F8",
+            mint: "#EEF4FB",
             surface: "#f1f5f9",
             border: "#d9d9d9",
-            lime: "#9feb2c",
+            lime: "#E08B4F",
             "on-surface": "#475569",
             slate: {
               900: "#0F172A", 600: "#475569", 400: "#94A3B8",
               300: "#CBD5E1", 200: "#E2E8F0", 100: "#F1F5F9",
             },
             // cores da grade de programação (do Figma)
-            "prog-mint": "#d7f0ee",
-            "prog-teal": "#234a4c",
-            "prog-mid": "#3a9092",
+            "prog-mint": "#DDE9F3",
+            "prog-teal": "#1E3E5A",
+            "prog-mid": "#3A6F98",
           },
           fontFamily: {
             display: ['"Special Gothic Expanded One"', "system-ui", "sans-serif"],
             body: ['"Bricolage Grotesque"', "system-ui", "sans-serif"],
           },
           borderRadius: { sm: "8px", md: "8px", lg: "16px" },
-          boxShadow: { card: "0 4px 24px rgba(14,35,37,0.08)" },
+          boxShadow: { card: "0 4px 24px rgba(4,34,58,0.08)" },
           maxWidth: { content: "1296px" },
         },
       },
@@ -62,8 +62,8 @@
       <!-- pill: logo + nav -->
       <div class="flex items-center gap-4 rounded-lg bg-mint px-4 py-2 shadow-card md:gap-7 md:pr-7">
         <a href="index.html" class="shrink-0" aria-label="Fórum do Agronegócio - início">
-          <!-- [PLACEHOLDER] logo traz "2025"; trocar pela versão 2027 -->
-          <img src="assets/Logo%20Dark%20Mode.svg" alt="Fórum do Agronegócio" class="h-9 w-auto md:h-11" />
+          <!-- Logo nova (cores 2027: navy / azul / terracota). Se o vetor ainda trouxer ano, trocar pela arte final 2027 -->
+          <img src="assets/logo-new.svg" alt="Fórum do Agronegócio" class="h-9 w-auto md:h-11" />
         </a>
         <nav class="hidden items-center gap-1 md:flex" aria-label="Navegação principal">
           <a href="programacao.html" class="rounded px-2 py-1 text-sm text-on-surface transition-colors hover:text-secondary">Programação</a>
@@ -135,8 +135,8 @@
 
       <div class="relative z-20 mx-auto w-full max-w-content px-4 md:px-8">
         <div class="flex flex-col items-center gap-8 text-center">
-          <!-- [PLACEHOLDER] logo traz "2025"; trocar pela versão 2027 -->
-          <img src="assets/logo-footer.svg" alt="Fórum do Agronegócio" class="h-24 w-auto md:h-32" />
+          <!-- Logo nova - versão clara (reverse) para fundo escuro. Derivada de logo-new.svg -->
+          <img src="assets/logo-new-light.svg" alt="Fórum do Agronegócio" class="h-24 w-auto md:h-32" />
 
           <h1 class="max-w-3xl font-display text-3xl leading-[1.12] text-mint md:text-5xl">
             <span class="text-lime">Agro 360:</span> competitivo, sustentável e bem compreendido
@@ -462,8 +462,8 @@
   <footer id="contato" class="bg-accent">
     <div class="mx-auto flex max-w-content flex-col items-center gap-8 px-4 py-12 md:flex-row md:justify-between md:px-8">
       <div class="flex flex-col items-center gap-8 md:flex-row md:gap-16">
-        <!-- [PLACEHOLDER] logo traz "2025"; trocar pela versão 2027 -->
-        <img src="assets/logo-footer.svg" alt="Fórum do Agronegócio" class="h-16 w-auto md:h-20" />
+        <!-- Logo nova - versão clara (reverse) para fundo escuro -->
+        <img src="assets/logo-new-light.svg" alt="Fórum do Agronegócio" class="h-16 w-auto md:h-20" />
         <nav class="flex flex-wrap items-center justify-center gap-x-8 gap-y-2" aria-label="Navegação do rodapé">
           <a href="programacao.html" class="text-sm text-mint transition-opacity hover:opacity-70">Programação</a>
           <a href="index.html#palestrantes" class="text-sm text-mint transition-opacity hover:opacity-70">Palestrantes</a>

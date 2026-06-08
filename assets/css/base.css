@@ -6,12 +6,12 @@
    ========================================================================== */
 
 :root {
-  --accent: #0e2325;
-  --secondary: #285d60;
-  --primary: #7ab61f;
-  --mint: #f3faf9;
-  --background: #eef5f4;
-  --lime: #9feb2c;
+  --accent: #04223A;
+  --secondary: #3A6F98;
+  --primary: #8D4A2A;
+  --mint: #EEF4FB;
+  --background: #EEF3F8;
+  --lime: #E08B4F;
 }
 
 html {
@@ -39,7 +39,7 @@ body {
   position: relative;
   background:
     repeating-linear-gradient(45deg, rgba(255, 255, 255, .03) 0 12px, transparent 12px 24px),
-    linear-gradient(135deg, #285d60, #0e2325);
+    linear-gradient(135deg, #3A6F98, #04223A);
   overflow: hidden;
   isolation: isolate;
 }
@@ -62,10 +62,10 @@ body {
 /* variante clara para fundos claros */
 .ph--light {
   background:
-    repeating-linear-gradient(45deg, rgba(14, 35, 37, .03) 0 12px, transparent 12px 24px),
+    repeating-linear-gradient(45deg, rgba(4, 34, 58, .03) 0 12px, transparent 12px 24px),
     linear-gradient(135deg, #e2e8f0, #cbd5e1);
 }
-.ph--light::after { color: rgba(40, 93, 96, .65); }
+.ph--light::after { color: rgba(58, 111, 152, .65); }
 
 /* logo placeholder (caixa branca com texto "logo ipsum") */
 .ph-logo {
@@ -96,8 +96,8 @@ body {
   inset: 0;
   z-index: 0;
   background:
-    radial-gradient(120% 80% at 70% 10%, rgba(122, 182, 31, .28), transparent 60%),
-    linear-gradient(135deg, #285d60, #0e2325 70%);
+    radial-gradient(120% 80% at 70% 10%, rgba(224, 139, 79, .30), transparent 60%),
+    linear-gradient(135deg, #3A6F98, #04223A 70%);
 }
 .ken-burns { animation: kenBurns 20s ease-in-out infinite alternate; }
 @keyframes kenBurns {
@@ -151,7 +151,7 @@ body {
 }
 .card-hover:hover {
   transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(14, 35, 37, .16);
+  box-shadow: 0 18px 40px rgba(4, 34, 58, .16);
 }
 
 /* --------------------------------------------------------------------------
