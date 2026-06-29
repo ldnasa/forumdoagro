@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Programação - Fórum do Agronegócio 2027</title>
-  <meta name="description" content="Grade completa do Fórum do Agronegócio 2027: painéis, horários, moderadores e palestrantes." />
+  <title>Programação - Fórum do Agronegócio 2026</title>
+  <meta name="description" content="Grade completa do Fórum do Agronegócio 2026: painéis, palestra magna e networking. 03 de setembro, Parque Ney Braga Eventos, Londrina - PR." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -38,205 +38,225 @@
 
 <body class="bg-background font-body text-accent">
 
-  <!-- ===== HEADER (idêntico ao index) ===== -->
-  <header id="site-header" class="fixed inset-x-0 top-0 z-50 transition-shadow">
-    <div class="mx-auto flex max-w-content items-center justify-between gap-4 px-4 py-3 md:px-8">
-      <div class="flex items-center gap-4 rounded-lg bg-mint px-4 py-2 shadow-card md:gap-7 md:pr-7">
-        <a href="index.html" class="shrink-0" aria-label="Fórum do Agronegócio - início">
-          <!-- Logo nova (cores 2027: navy / azul / terracota) -->
-          <img src="assets/logo-new.svg" alt="Fórum do Agronegócio" class="h-9 w-auto md:h-11" />
+  <!-- ====================================================================
+       HEADER UNIFICADO (idêntico ao index) - menu + contador
+       ==================================================================== -->
+  <header id="site-header" class="fixed inset-x-0 top-0 z-50 bg-accent/95 shadow-card backdrop-blur-sm">
+    <div class="mx-auto max-w-content px-4 py-3 md:px-8">
+      <div class="grid grid-cols-[auto_1fr_auto] items-center gap-3 md:grid-cols-3 md:gap-4">
+
+        <div class="flex items-center">
+          <nav class="hidden items-center gap-1 md:flex" aria-label="Navegação principal">
+            <a href="programacao.html" class="rounded px-2.5 py-1 text-sm font-semibold text-lime" aria-current="page">Programação</a>
+            <a href="index.html#palestrantes" class="rounded px-2.5 py-1 text-sm text-mint/85 transition-colors hover:text-lime">Palestrantes</a>
+            <a href="index.html#patrocinio" class="rounded px-2.5 py-1 text-sm text-mint/85 transition-colors hover:text-lime">Patrocínio</a>
+            <a href="contato.html" class="rounded px-2.5 py-1 text-sm text-mint/85 transition-colors hover:text-lime">Contato</a>
+          </nav>
+          <button id="menu-toggle" class="rounded-lg bg-white/10 p-2.5 text-mint md:hidden" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+            <svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg>
+          </button>
+        </div>
+
+        <a href="index.html" class="flex justify-center" aria-label="Fórum do Agronegócio - início">
+          <img src="assets/logo-new-light.svg" alt="Fórum do Agronegócio 2026" class="h-7 w-auto md:h-[38px]" />
         </a>
-        <nav class="hidden items-center gap-1 md:flex" aria-label="Navegação principal">
-          <a href="programacao.html" class="rounded px-2 py-1 text-sm text-secondary font-semibold">Programação</a>
-          <a href="index.html#palestrantes" class="rounded px-2 py-1 text-sm text-on-surface transition-colors hover:text-secondary">Palestrantes</a>
-          <a href="index.html#patrocinio" class="rounded px-2 py-1 text-sm text-on-surface transition-colors hover:text-secondary">Patrocínio</a>
-          <a href="index.html#contato" class="rounded px-2 py-1 text-sm text-on-surface transition-colors hover:text-secondary">Contato</a>
-        </nav>
+
+        <div class="flex items-center justify-end gap-3 md:gap-4">
+          <div class="hidden items-center gap-2.5 font-display text-lime lg:flex" aria-label="Contagem regressiva para o evento">
+            <span class="flex items-baseline gap-1"><span data-cd="days" class="text-lg leading-none">00</span><span class="text-[10px] uppercase text-slate-400">d</span></span>
+            <span class="flex items-baseline gap-1"><span data-cd="hours" class="text-lg leading-none">00</span><span class="text-[10px] uppercase text-slate-400">h</span></span>
+            <span class="flex items-baseline gap-1"><span data-cd="min" class="text-lg leading-none">00</span><span class="text-[10px] uppercase text-slate-400">m</span></span>
+            <span class="flex items-baseline gap-1"><span data-cd="sec" class="text-lg leading-none">00</span><span class="text-[10px] uppercase text-slate-400">s</span></span>
+          </div>
+          <a href="ingressos.html" class="btn-ticket shrink-0 bg-primary px-4 py-2.5 font-display text-xs uppercase tracking-[0.08em] text-white transition-transform hover:scale-[1.03] md:px-6 md:text-[13px]">
+            <span class="hidden sm:inline">Garanta seu ingresso</span>
+            <span class="sm:hidden">Ingressos</span>
+          </a>
+        </div>
       </div>
-      <div class="flex items-center gap-2">
-        <a href="ingressos.html" class="btn-ticket hidden bg-primary px-7 py-3 font-display text-[15px] uppercase tracking-[0.09em] text-white transition-transform hover:scale-[1.03] sm:inline-block">Ingressos</a>
-        <button id="menu-toggle" class="rounded-lg bg-mint p-3 shadow-card md:hidden" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
-          <!-- ICONE: Lucide "menu" -->
-          <svg aria-hidden="true" class="h-5 w-5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg>
-        </button>
+
+      <div class="mt-2.5 flex items-center justify-center gap-3 border-t border-white/10 pt-2.5 font-display text-lime lg:hidden">
+        <span class="text-[10px] uppercase tracking-[0.18em] text-slate-400">Faltam</span>
+        <span class="flex items-baseline gap-1"><span data-cd="days" class="text-base leading-none">00</span><span class="text-[9px] uppercase text-slate-400">d</span></span>
+        <span class="flex items-baseline gap-1"><span data-cd="hours" class="text-base leading-none">00</span><span class="text-[9px] uppercase text-slate-400">h</span></span>
+        <span class="flex items-baseline gap-1"><span data-cd="min" class="text-base leading-none">00</span><span class="text-[9px] uppercase text-slate-400">m</span></span>
+        <span class="flex items-baseline gap-1"><span data-cd="sec" class="text-base leading-none">00</span><span class="text-[9px] uppercase text-slate-400">s</span></span>
       </div>
     </div>
-    <div id="mobile-menu" class="mobile-menu mx-4 rounded-lg bg-mint shadow-card md:hidden">
+
+    <div id="mobile-menu" class="mobile-menu mx-4 mt-2 rounded-lg bg-white/10 backdrop-blur-sm md:hidden">
       <nav class="flex flex-col p-2" aria-label="Navegação mobile">
-        <a href="programacao.html" class="rounded px-3 py-3 text-sm text-secondary font-semibold">Programação</a>
-        <a href="index.html#palestrantes" class="rounded px-3 py-3 text-sm text-on-surface hover:bg-background">Palestrantes</a>
-        <a href="index.html#patrocinio" class="rounded px-3 py-3 text-sm text-on-surface hover:bg-background">Patrocínio</a>
-        <a href="index.html#contato" class="rounded px-3 py-3 text-sm text-on-surface hover:bg-background">Contato</a>
-        <a href="ingressos.html" class="mt-1 rounded-full bg-primary px-3 py-3 text-center font-display text-sm uppercase tracking-wide text-white">Ingressos</a>
+        <a href="programacao.html" class="rounded px-3 py-3 text-sm font-semibold text-lime" aria-current="page">Programação</a>
+        <a href="index.html#palestrantes" class="rounded px-3 py-3 text-sm text-mint hover:bg-white/10">Palestrantes</a>
+        <a href="index.html#patrocinio" class="rounded px-3 py-3 text-sm text-mint hover:bg-white/10">Patrocínio</a>
+        <a href="contato.html" class="rounded px-3 py-3 text-sm text-mint hover:bg-white/10">Contato</a>
       </nav>
     </div>
   </header>
 
-  <main class="pt-24 md:pt-28">
-    <!-- ===== Cabeçalho da página + abas por dia ===== -->
-    <section class="bg-accent py-14 md:py-20">
+  <main>
+    <!-- ==================================================================
+         Cabeçalho da página (1 dia - 03 SET)
+         ================================================================== -->
+    <section class="bg-accent pt-36 pb-14 md:pt-40 md:pb-20">
       <div class="mx-auto max-w-content px-4 md:px-8">
-        <p class="font-body text-sm uppercase tracking-[0.18em] text-lime">Fórum do Agronegócio 2027</p>
+        <p class="font-body text-sm uppercase tracking-[0.18em] text-lime">Fórum do Agronegócio 2026</p>
         <h1 class="mt-3 font-display text-4xl text-mint md:text-5xl">Programação</h1>
         <p class="mt-4 max-w-2xl font-body text-base text-slate-300">
-          Um dia inteiro de painéis, palestra magna e networking. Clique em cada atividade para ver moderador e palestrantes.
-          <span class="font-semibold text-slate-100">[PLACEHOLDER - grade da edição anterior como exemplo]</span>
+          Um dia inteiro de painéis, palestra magna e networking. 03 de setembro de 2026, no Parque Ney Braga Eventos, em Londrina - PR.
         </p>
-
-        <!-- abas por dia -->
-        <div class="mt-8 inline-flex rounded-full bg-white/10 p-1" role="tablist" aria-label="Selecione o dia">
-          <button data-day-tab="1" role="tab" aria-selected="true" class="rounded-full bg-primary px-6 py-2.5 font-display text-sm uppercase tracking-wide text-white">[Dia 1 · 04 set]</button>
-          <button data-day-tab="2" role="tab" aria-selected="false" class="rounded-full px-6 py-2.5 font-display text-sm uppercase tracking-wide text-mint">[Dia 2 · 05 set]</button>
+        <div class="mt-7 inline-flex items-center gap-2 rounded-full bg-white/10 px-5 py-2.5 font-display text-sm uppercase tracking-wide text-mint">
+          <svg aria-hidden="true" class="h-4 w-4 text-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+          Quinta-feira · 03 de setembro
         </div>
       </div>
     </section>
 
-    <!-- ===== Grade ===== -->
+    <!-- ==================================================================
+         Grade do dia
+         ================================================================== -->
     <section class="py-14 md:py-20">
       <div class="mx-auto max-w-4xl px-4 md:px-8">
+        <div class="space-y-4">
 
-        <!-- DIA 1 -->
-        <div data-day-panel="1" class="space-y-4">
-          <!-- credenciamento (sem detalhe) -->
+          <!-- 08h00 Credenciamento -->
           <div class="reveal flex items-center gap-4 rounded-lg bg-prog-mint px-5 py-5 md:px-8">
-            <span class="font-display text-2xl text-secondary md:text-3xl">08h</span>
-            <span class="font-display text-base text-accent md:text-lg">Credenciamento + Abertura</span>
+            <span class="w-16 shrink-0 font-display text-xl text-secondary md:w-24 md:text-2xl">08h00</span>
+            <span class="font-display text-base text-accent md:text-lg">Credenciamento e recepção</span>
           </div>
 
-          <!-- Painel 1 -->
+          <!-- 09h10 Abertura -->
+          <div class="reveal flex items-center gap-4 rounded-lg bg-prog-mint px-5 py-5 md:px-8">
+            <span class="w-16 shrink-0 font-display text-xl text-secondary md:w-24 md:text-2xl">09h10</span>
+            <span class="font-display text-base text-accent md:text-lg">Abertura oficial</span>
+          </div>
+
+          <!-- 09h45 Painel 1 -->
           <div class="acc-item reveal overflow-hidden rounded-lg border border-border bg-white shadow-card">
             <button class="acc-trigger flex w-full items-center gap-4 px-5 py-5 text-left md:px-8" aria-expanded="false">
-              <span class="w-16 shrink-0 font-display text-xl text-secondary md:w-20 md:text-2xl">09h15</span>
-              <span class="hidden shrink-0 rounded border border-primary px-2 py-1 font-display text-[10px] uppercase tracking-wide text-primary sm:inline-block">Palco Principal</span>
-              <span class="flex-1"><span class="font-display text-sm text-accent md:text-base"><span class="text-secondary">Painel 1</span> - Geopolítica no agro: produção eficiente e acesso a mercados</span></span>
+              <span class="w-16 shrink-0 font-display text-xl text-secondary md:w-24 md:text-2xl">09h45</span>
+              <span class="flex-1"><span class="font-display text-sm text-accent md:text-base"><span class="text-secondary">Painel 1</span> - Brasil como potência agro: o que define os próximos anos</span></span>
               <span class="acc-chevron shrink-0 text-secondary"><svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
             </button>
             <div class="acc-body">
               <div class="border-t border-border px-5 py-5 md:px-8">
-                <p class="font-body text-xs uppercase tracking-wide text-on-surface">Moderação</p>
-                <p class="mb-3 font-body text-sm text-accent">[PLACEHOLDER] Sérgio Bortolozzo - SRB</p>
-                <p class="font-body text-xs uppercase tracking-wide text-on-surface">Palestrantes</p>
-                <p class="font-body text-sm text-accent">Carlos Fávaro (MAPA) · Pedro Lupion (FPA) · Clauber Leite (Instituto E+)</p>
+                <p class="font-body text-sm text-on-surface">Moderação e palestrantes em atualização.</p>
               </div>
             </div>
           </div>
 
-          <!-- Painel 2 -->
+          <!-- 11h00 Painel 2 -->
           <div class="acc-item reveal overflow-hidden rounded-lg border border-border bg-white shadow-card">
             <button class="acc-trigger flex w-full items-center gap-4 px-5 py-5 text-left md:px-8" aria-expanded="false">
-              <span class="w-16 shrink-0 font-display text-xl text-secondary md:w-20 md:text-2xl">10h30</span>
-              <span class="hidden shrink-0 rounded border border-primary px-2 py-1 font-display text-[10px] uppercase tracking-wide text-primary sm:inline-block">Palco Principal</span>
-              <span class="flex-1"><span class="font-display text-sm text-accent md:text-base"><span class="text-secondary">Painel 2</span> - Como diferentes atores do agronegócio estão impulsionando a produtividade e a competitividade no setor</span></span>
+              <span class="w-16 shrink-0 font-display text-xl text-secondary md:w-24 md:text-2xl">11h00</span>
+              <span class="flex-1"><span class="font-display text-sm text-accent md:text-base"><span class="text-secondary">Painel 2</span> - Rastreabilidade nas cadeias agroalimentares</span></span>
               <span class="acc-chevron shrink-0 text-secondary"><svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
             </button>
             <div class="acc-body">
               <div class="border-t border-border px-5 py-5 md:px-8">
-                <p class="font-body text-xs uppercase tracking-wide text-on-surface">Moderação</p>
-                <p class="mb-3 font-body text-sm text-accent">[PLACEHOLDER] Cassiano Ribeiro</p>
-                <p class="font-body text-xs uppercase tracking-wide text-on-surface">Palestrantes</p>
-                <p class="font-body text-sm text-accent">Ágide Eduardo Meneguetti (FAEP) · João Francisco Sanches Filho (Integrada) · Angela Ruiz</p>
+                <p class="font-body text-sm text-on-surface">Moderação e palestrantes em atualização.</p>
               </div>
             </div>
           </div>
 
-          <!-- almoço -->
+          <!-- 12h00 Almoço -->
           <div class="reveal flex items-center gap-4 rounded-lg bg-background px-5 py-5 md:px-8">
-            <span class="font-display text-2xl text-secondary md:text-3xl">11h45</span>
-            <span class="font-display text-base text-accent md:text-lg">Almoço &amp; Networking</span>
+            <span class="w-16 shrink-0 font-display text-xl text-secondary md:w-24 md:text-2xl">12h00</span>
+            <span class="font-display text-base text-accent md:text-lg">Almoço e networking</span>
           </div>
 
-          <!-- Painel 3 -->
+          <!-- 14h15 Painel 3 -->
           <div class="acc-item reveal overflow-hidden rounded-lg border border-border bg-white shadow-card">
             <button class="acc-trigger flex w-full items-center gap-4 px-5 py-5 text-left md:px-8" aria-expanded="false">
-              <span class="w-16 shrink-0 font-display text-xl text-secondary md:w-20 md:text-2xl">14h</span>
-              <span class="hidden shrink-0 rounded border border-primary px-2 py-1 font-display text-[10px] uppercase tracking-wide text-primary sm:inline-block">Palco Principal</span>
-              <span class="flex-1"><span class="font-display text-sm text-accent md:text-base"><span class="text-secondary">Painel 3</span> - Políticas agrícolas e segurança alimentar</span></span>
+              <span class="w-16 shrink-0 font-display text-xl text-secondary md:w-24 md:text-2xl">14h15</span>
+              <span class="flex-1"><span class="font-display text-sm text-accent md:text-base"><span class="text-secondary">Painel 3</span> - Clima, carbono e sustentabilidade: da pressão à oportunidade</span></span>
               <span class="acc-chevron shrink-0 text-secondary"><svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
             </button>
             <div class="acc-body">
               <div class="border-t border-border px-5 py-5 md:px-8">
-                <p class="font-body text-xs uppercase tracking-wide text-on-surface">Moderação</p>
-                <p class="mb-3 font-body text-sm text-accent">[PLACEHOLDER] Fernando Lopes - FAEP</p>
-                <p class="font-body text-xs uppercase tracking-wide text-on-surface">Palestrantes</p>
-                <p class="font-body text-sm text-accent">[PLACEHOLDER - definir painelistas 2027]</p>
+                <p class="font-body text-sm text-on-surface">Moderação e palestrantes em atualização.</p>
               </div>
             </div>
           </div>
 
-          <!-- Painel 4 -->
+          <!-- 15h30 Painel 4 -->
           <div class="acc-item reveal overflow-hidden rounded-lg border border-border bg-white shadow-card">
             <button class="acc-trigger flex w-full items-center gap-4 px-5 py-5 text-left md:px-8" aria-expanded="false">
-              <span class="w-16 shrink-0 font-display text-xl text-secondary md:w-20 md:text-2xl">15h15</span>
-              <span class="hidden shrink-0 rounded border border-primary px-2 py-1 font-display text-[10px] uppercase tracking-wide text-primary sm:inline-block">Palco Principal</span>
-              <span class="flex-1"><span class="font-display text-sm text-accent md:text-base"><span class="text-secondary">Painel 4</span> - Neutralidade de carbono no agro: caminhos para 2030 e 2050</span></span>
+              <span class="w-16 shrink-0 font-display text-xl text-secondary md:w-24 md:text-2xl">15h30</span>
+              <span class="flex-1"><span class="font-display text-sm text-accent md:text-base"><span class="text-secondary">Painel 4</span> - Comunicação: quem conta a história do agro?</span></span>
               <span class="acc-chevron shrink-0 text-secondary"><svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
             </button>
             <div class="acc-body">
               <div class="border-t border-border px-5 py-5 md:px-8">
-                <p class="font-body text-xs uppercase tracking-wide text-on-surface">Moderação</p>
-                <p class="mb-3 font-body text-sm text-accent">[PLACEHOLDER] Clauber Leite - Instituto E+</p>
-                <p class="font-body text-xs uppercase tracking-wide text-on-surface">Palestrantes</p>
-                <p class="font-body text-sm text-accent">[PLACEHOLDER - definir painelistas 2027]</p>
+                <p class="font-body text-sm text-on-surface">Moderação e palestrantes em atualização.</p>
               </div>
             </div>
           </div>
 
-          <!-- Palestra Magna (destaque) -->
+          <!-- 16h45 Palestra Magna (destaque) -->
           <div class="acc-item reveal overflow-hidden rounded-lg bg-prog-mid shadow-card">
             <button class="acc-trigger flex w-full items-center gap-4 px-5 py-5 text-left md:px-8" aria-expanded="false">
-              <span class="w-16 shrink-0 font-display text-xl text-mint md:w-20 md:text-2xl">16h30</span>
-              <span class="flex-1"><span class="font-display text-sm text-mint md:text-base"><span class="text-lime">Palestra Magna</span> - Como ser competitivo, sustentável e bem compreendido?</span></span>
+              <span class="w-16 shrink-0 font-display text-xl text-mint md:w-24 md:text-2xl">16h45</span>
+              <span class="flex-1"><span class="font-display text-sm text-mint md:text-base"><span class="text-lime">Palestra Magna</span> - O agro que produz também pode inspirar</span></span>
               <span class="acc-chevron shrink-0 text-mint"><svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
             </button>
             <div class="acc-body">
               <div class="border-t border-white/15 px-5 py-5 text-mint md:px-8">
-                <p class="font-body text-xs uppercase tracking-wide text-slate-300">Palestrante convidado</p>
-                <p class="font-body text-sm">[PLACEHOLDER - keynote da edição 2027]</p>
+                <p class="font-body text-sm text-slate-200">Palestrante convidado em atualização.</p>
               </div>
             </div>
           </div>
 
-          <!-- Happy Hour (destaque verde) -->
-          <div class="reveal flex flex-wrap items-center justify-between gap-3 rounded-lg bg-primary px-5 py-5 md:px-8">
-            <div class="flex items-center gap-4">
-              <span class="font-display text-2xl text-mint md:text-3xl">17h30</span>
-              <span class="font-display text-base text-mint md:text-lg">Happy Hour + Encerramento</span>
-            </div>
-            <a href="ingressos.html#happy-hour" class="rounded-full bg-accent px-4 py-2 font-display text-xs uppercase tracking-wide text-mint">Ver detalhes</a>
+          <!-- 17h45 Happy Hour (destaque) -->
+          <div class="reveal flex items-center gap-4 rounded-lg bg-primary px-5 py-5 md:px-8">
+            <span class="w-16 shrink-0 font-display text-xl text-mint md:w-24 md:text-2xl">17h45</span>
+            <span class="font-display text-base text-mint md:text-lg">Happy Hour</span>
           </div>
         </div>
 
-        <!-- DIA 2 (placeholder) -->
-        <div data-day-panel="2" class="hidden space-y-4">
-          <div class="rounded-lg border border-dashed border-border bg-white px-6 py-12 text-center">
-            <p class="font-display text-xl text-accent">Dia 2 - grade em definição</p>
-            <p class="mt-3 font-body text-sm text-on-surface">[PLACEHOLDER] A grade do segundo dia da edição 2027 entra aqui, no mesmo formato do Dia 1.</p>
-          </div>
-        </div>
+        <p class="reveal mt-8 font-body text-sm text-on-surface">A composição dos painéis (moderadores e palestrantes) será atualizada conforme as confirmações.</p>
 
-        <div class="reveal mt-10 text-center">
-          <a href="ingressos.html" class="inline-block rounded-full bg-secondary px-8 py-4 font-display text-sm uppercase tracking-wide text-white transition-transform hover:scale-[1.03]">Garantir meu ingresso</a>
+        <div class="reveal mt-8 text-center">
+          <a href="ingressos.html" class="inline-block rounded-full bg-secondary px-8 py-4 font-display text-sm uppercase tracking-wide text-white transition-transform hover:scale-[1.03]">Garanta seu ingresso</a>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- ===== FOOTER (idêntico ao index) ===== -->
-  <footer id="contato" class="bg-accent">
-    <div class="mx-auto flex max-w-content flex-col items-center gap-8 px-4 py-12 md:flex-row md:justify-between md:px-8">
-      <div class="flex flex-col items-center gap-8 md:flex-row md:gap-16">
-        <!-- [PLACEHOLDER] logo traz "2025"; trocar pela versão 2027 -->
-        <img src="assets/logo-new-light.svg" alt="Fórum do Agronegócio" class="h-16 w-auto md:h-20" />
+  <!-- ====================================================================
+       FOOTER (idêntico ao index)
+       ==================================================================== -->
+  <footer id="rodape" class="bg-accent">
+    <div class="mx-auto flex max-w-content flex-col gap-8 px-4 py-12 md:px-8">
+      <div class="flex flex-col items-center gap-8 md:flex-row md:items-center md:justify-between">
+        <div class="flex flex-col items-center gap-3 md:flex-row md:gap-5">
+          <img src="assets/logo-new-light.svg" alt="Fórum do Agronegócio 2026" class="h-14 w-auto md:h-16" />
+          <span class="font-display text-sm text-mint/80">Fórum do Agronegócio 2026</span>
+        </div>
         <nav class="flex flex-wrap items-center justify-center gap-x-8 gap-y-2" aria-label="Navegação do rodapé">
           <a href="programacao.html" class="text-sm text-mint transition-opacity hover:opacity-70">Programação</a>
           <a href="index.html#palestrantes" class="text-sm text-mint transition-opacity hover:opacity-70">Palestrantes</a>
           <a href="index.html#patrocinio" class="text-sm text-mint transition-opacity hover:opacity-70">Patrocínio</a>
-          <a href="index.html#contato" class="text-sm text-mint transition-opacity hover:opacity-70">Contato</a>
+          <a href="contato.html" class="text-sm text-mint transition-opacity hover:opacity-70">Contato</a>
         </nav>
+        <div class="flex items-center gap-3">
+          <a href="https://www.instagram.com/sociedaderuraldoparana" target="_blank" rel="noopener noreferrer" aria-label="Instagram da SRP" class="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-mint transition-colors hover:border-lime hover:text-lime">
+            <svg aria-hidden="true" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          </a>
+          <a href="https://www.facebook.com/sociedaderuraldoparana" target="_blank" rel="noopener noreferrer" aria-label="Facebook da SRP" class="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-mint transition-colors hover:border-lime hover:text-lime">
+            <svg aria-hidden="true" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/sociedade-rural-do-parana" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn da SRP" class="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-mint transition-colors hover:border-lime hover:text-lime">
+            <svg aria-hidden="true" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
       </div>
-      <a href="https://www.ldnasa.com.br" target="_blank" rel="noopener noreferrer" aria-label="LDNA S/A - Agência Digital">
-        <img src="assets/logo-ldnasa-footer.svg" alt="LDNA S/A - Agência Digital" class="h-9 w-auto" />
-      </a>
+      <div class="flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 md:flex-row">
+        <p class="font-body text-xs text-slate-400">© 2026 Fórum do Agronegócio · Realização Sociedade Rural do Paraná</p>
+        <a href="https://www.ldnasa.com.br" target="_blank" rel="noopener noreferrer" aria-label="LDNA S/A - Agência Digital">
+          <img src="assets/logo-ldnasa-footer.svg" alt="LDNA S/A - Agência Digital" class="h-8 w-auto" />
+        </a>
+      </div>
     </div>
   </footer>
 

@@ -144,6 +144,27 @@ body {
 }
 
 /* --------------------------------------------------------------------------
+   Carrossel horizontal (palestrantes) - scroll-snap sem barra visível
+   -------------------------------------------------------------------------- */
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+.carousel-btn {
+  display: flex;
+  height: 2.5rem;
+  width: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid rgba(58, 111, 152, .35);
+  color: #3A6F98;
+  transition: background-color .25s ease, border-color .25s ease, color .25s ease;
+}
+.carousel-btn:hover { border-color: #E08B4F; color: #E08B4F; }
+/* variante para fundos escuros */
+.carousel-btn--dark { border-color: rgba(58, 111, 152, .35); color: #3A6F98; }
+
+/* --------------------------------------------------------------------------
    Cards - hover
    -------------------------------------------------------------------------- */
 .card-hover {

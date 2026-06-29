@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ingressos - Fórum do Agronegócio 2027</title>
-  <meta name="description" content="Ingressos do Fórum do Agronegócio 2027. Escolha seu tipo de ingresso e participe. Happy hour de encerramento incluso." />
+  <title>Ingressos - Fórum do Agronegócio 2026</title>
+  <meta name="description" content="Ingressos do Fórum do Agronegócio 2026. Sócio SRP, Não-Sócio e Empresarial. Escolha seu ingresso e participe - 03 de setembro, Londrina - PR." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -38,141 +38,203 @@
 
 <body class="bg-background font-body text-accent">
 
-  <!-- ===== HEADER (idêntico ao index) ===== -->
-  <header id="site-header" class="fixed inset-x-0 top-0 z-50 transition-shadow">
-    <div class="mx-auto flex max-w-content items-center justify-between gap-4 px-4 py-3 md:px-8">
-      <div class="flex items-center gap-4 rounded-lg bg-mint px-4 py-2 shadow-card md:gap-7 md:pr-7">
-        <a href="index.html" class="shrink-0" aria-label="Fórum do Agronegócio - início">
-          <!-- Logo nova (cores 2027: navy / azul / terracota) -->
-          <img src="assets/logo-new.svg" alt="Fórum do Agronegócio" class="h-9 w-auto md:h-11" />
+  <!-- ====================================================================
+       HEADER UNIFICADO (idêntico ao index) - menu + contador
+       ==================================================================== -->
+  <header id="site-header" class="fixed inset-x-0 top-0 z-50 bg-accent/95 shadow-card backdrop-blur-sm">
+    <div class="mx-auto max-w-content px-4 py-3 md:px-8">
+      <div class="grid grid-cols-[auto_1fr_auto] items-center gap-3 md:grid-cols-3 md:gap-4">
+
+        <div class="flex items-center">
+          <nav class="hidden items-center gap-1 md:flex" aria-label="Navegação principal">
+            <a href="programacao.html" class="rounded px-2.5 py-1 text-sm text-mint/85 transition-colors hover:text-lime">Programação</a>
+            <a href="index.html#palestrantes" class="rounded px-2.5 py-1 text-sm text-mint/85 transition-colors hover:text-lime">Palestrantes</a>
+            <a href="index.html#patrocinio" class="rounded px-2.5 py-1 text-sm text-mint/85 transition-colors hover:text-lime">Patrocínio</a>
+            <a href="contato.html" class="rounded px-2.5 py-1 text-sm text-mint/85 transition-colors hover:text-lime">Contato</a>
+          </nav>
+          <button id="menu-toggle" class="rounded-lg bg-white/10 p-2.5 text-mint md:hidden" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+            <svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg>
+          </button>
+        </div>
+
+        <a href="index.html" class="flex justify-center" aria-label="Fórum do Agronegócio - início">
+          <img src="assets/logo-new-light.svg" alt="Fórum do Agronegócio 2026" class="h-7 w-auto md:h-[38px]" />
         </a>
-        <nav class="hidden items-center gap-1 md:flex" aria-label="Navegação principal">
-          <a href="programacao.html" class="rounded px-2 py-1 text-sm text-on-surface transition-colors hover:text-secondary">Programação</a>
-          <a href="index.html#palestrantes" class="rounded px-2 py-1 text-sm text-on-surface transition-colors hover:text-secondary">Palestrantes</a>
-          <a href="index.html#patrocinio" class="rounded px-2 py-1 text-sm text-on-surface transition-colors hover:text-secondary">Patrocínio</a>
-          <a href="index.html#contato" class="rounded px-2 py-1 text-sm text-on-surface transition-colors hover:text-secondary">Contato</a>
-        </nav>
+
+        <div class="flex items-center justify-end gap-3 md:gap-4">
+          <div class="hidden items-center gap-2.5 font-display text-lime lg:flex" aria-label="Contagem regressiva para o evento">
+            <span class="flex items-baseline gap-1"><span data-cd="days" class="text-lg leading-none">00</span><span class="text-[10px] uppercase text-slate-400">d</span></span>
+            <span class="flex items-baseline gap-1"><span data-cd="hours" class="text-lg leading-none">00</span><span class="text-[10px] uppercase text-slate-400">h</span></span>
+            <span class="flex items-baseline gap-1"><span data-cd="min" class="text-lg leading-none">00</span><span class="text-[10px] uppercase text-slate-400">m</span></span>
+            <span class="flex items-baseline gap-1"><span data-cd="sec" class="text-lg leading-none">00</span><span class="text-[10px] uppercase text-slate-400">s</span></span>
+          </div>
+          <a href="ingressos.html" class="btn-ticket shrink-0 bg-primary px-4 py-2.5 font-display text-xs uppercase tracking-[0.08em] text-white transition-transform hover:scale-[1.03] md:px-6 md:text-[13px]">
+            <span class="hidden sm:inline">Garanta seu ingresso</span>
+            <span class="sm:hidden">Ingressos</span>
+          </a>
+        </div>
       </div>
-      <div class="flex items-center gap-2">
-        <a href="ingressos.html" class="btn-ticket hidden bg-primary px-7 py-3 font-display text-[15px] uppercase tracking-[0.09em] text-white transition-transform hover:scale-[1.03] sm:inline-block">Ingressos</a>
-        <button id="menu-toggle" class="rounded-lg bg-mint p-3 shadow-card md:hidden" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
-          <!-- ICONE: Lucide "menu" -->
-          <svg aria-hidden="true" class="h-5 w-5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg>
-        </button>
+
+      <div class="mt-2.5 flex items-center justify-center gap-3 border-t border-white/10 pt-2.5 font-display text-lime lg:hidden">
+        <span class="text-[10px] uppercase tracking-[0.18em] text-slate-400">Faltam</span>
+        <span class="flex items-baseline gap-1"><span data-cd="days" class="text-base leading-none">00</span><span class="text-[9px] uppercase text-slate-400">d</span></span>
+        <span class="flex items-baseline gap-1"><span data-cd="hours" class="text-base leading-none">00</span><span class="text-[9px] uppercase text-slate-400">h</span></span>
+        <span class="flex items-baseline gap-1"><span data-cd="min" class="text-base leading-none">00</span><span class="text-[9px] uppercase text-slate-400">m</span></span>
+        <span class="flex items-baseline gap-1"><span data-cd="sec" class="text-base leading-none">00</span><span class="text-[9px] uppercase text-slate-400">s</span></span>
       </div>
     </div>
-    <div id="mobile-menu" class="mobile-menu mx-4 rounded-lg bg-mint shadow-card md:hidden">
+
+    <div id="mobile-menu" class="mobile-menu mx-4 mt-2 rounded-lg bg-white/10 backdrop-blur-sm md:hidden">
       <nav class="flex flex-col p-2" aria-label="Navegação mobile">
-        <a href="programacao.html" class="rounded px-3 py-3 text-sm text-on-surface hover:bg-background">Programação</a>
-        <a href="index.html#palestrantes" class="rounded px-3 py-3 text-sm text-on-surface hover:bg-background">Palestrantes</a>
-        <a href="index.html#patrocinio" class="rounded px-3 py-3 text-sm text-on-surface hover:bg-background">Patrocínio</a>
-        <a href="index.html#contato" class="rounded px-3 py-3 text-sm text-on-surface hover:bg-background">Contato</a>
-        <a href="ingressos.html" class="mt-1 rounded-full bg-primary px-3 py-3 text-center font-display text-sm uppercase tracking-wide text-white">Ingressos</a>
+        <a href="programacao.html" class="rounded px-3 py-3 text-sm text-mint hover:bg-white/10">Programação</a>
+        <a href="index.html#palestrantes" class="rounded px-3 py-3 text-sm text-mint hover:bg-white/10">Palestrantes</a>
+        <a href="index.html#patrocinio" class="rounded px-3 py-3 text-sm text-mint hover:bg-white/10">Patrocínio</a>
+        <a href="contato.html" class="rounded px-3 py-3 text-sm text-mint hover:bg-white/10">Contato</a>
       </nav>
     </div>
   </header>
 
-  <main class="pt-24 md:pt-28">
-    <!-- ===== Cabeçalho ===== -->
-    <section class="bg-accent py-14 md:py-20">
+  <main>
+    <!-- ==================================================================
+         Cabeçalho
+         ================================================================== -->
+    <section class="bg-accent pt-36 pb-14 md:pt-40 md:pb-20">
       <div class="mx-auto max-w-content px-4 md:px-8">
-        <p class="font-body text-sm uppercase tracking-[0.18em] text-lime">Garanta seu lugar</p>
+        <p class="font-body text-sm uppercase tracking-[0.18em] text-lime">Sua experiência começa aqui</p>
         <h1 class="mt-3 font-display text-4xl text-mint md:text-5xl">Ingressos</h1>
-        <p class="mt-4 max-w-2xl font-body text-base text-slate-300">
-          Escolha o ingresso ideal e participe do Fórum do Agronegócio 2027.
-          <span class="font-semibold text-slate-100">[PLACEHOLDER - preços e condições de exemplo]</span>
-        </p>
+        <p class="mt-4 max-w-2xl font-body text-base text-slate-300">Escolha seu ingresso e prepare-se para viver o Fórum do Agronegócio 2026.</p>
       </div>
     </section>
 
-    <!-- ===== Cards de ingresso ===== -->
+    <!-- ==================================================================
+         Cards de ingresso (Sócio SRP / Não-Sócio / Empresarial)
+         ================================================================== -->
     <section class="py-14 md:py-20">
       <div class="mx-auto max-w-content px-4 md:px-8">
-        <div id="tickets-grid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div id="tickets-grid" class="grid gap-6 md:grid-cols-3">
           <!-- gerados via JS -->
         </div>
-        <p class="mt-6 font-body text-sm text-on-surface">Compra processada em ambiente externo (ex: Sympla). <span class="font-semibold">[PLACEHOLDER - link de compra]</span></p>
+        <p class="mt-6 font-body text-sm text-on-surface">Compra processada em ambiente externo. <span class="font-semibold">[PLACEHOLDER - link de compra (ex: Sympla)]</span> · Os valores de pré-venda mudam conforme o lote.</p>
       </div>
     </section>
 
-    <!-- ===== Happy Hour em destaque (saiu da home) ===== -->
-    <section id="happy-hour" class="pb-16 md:pb-24">
+    <!-- ==================================================================
+         Benefícios (substitui o antigo bloco de happy hour)
+         ================================================================== -->
+    <section class="bg-accent py-16 md:py-24">
       <div class="mx-auto max-w-content px-4 md:px-8">
-        <div class="reveal grid items-stretch overflow-hidden rounded-lg bg-accent md:grid-cols-2">
-          <div class="flex flex-col justify-center p-8 md:p-12">
-            <p class="font-body text-sm uppercase tracking-[0.18em] text-lime">Encerramento</p>
-            <h2 class="mt-3 font-display text-3xl leading-tight text-mint md:text-4xl">
-              O Fórum se encerra com <span class="text-lime">um brinde!</span>
-            </h2>
-            <p class="mt-4 font-body text-base leading-relaxed text-slate-300">
-              Um happy hour especial com bebida, boa comida e música ao vivo espera por você ao final do dia.
-            </p>
-            <ul class="mt-6 space-y-3 font-body text-sm text-mint">
-              <li class="flex items-center gap-3"><span class="text-primary">●</span> A partir das 17h30, para todos os participantes</li>
-              <li class="flex items-center gap-3"><span class="text-primary">●</span> Mesmo local do evento - Parque Ney Braga</li>
-              <li class="flex items-center gap-3"><span class="text-primary">●</span> Música ao vivo</li>
-            </ul>
-            <!-- patrocinador do happy hour -->
-            <div class="mt-8 flex items-center gap-4">
-              <span class="font-body text-xs uppercase tracking-wide text-slate-400">Patrocínio Happy Hour</span>
-              <div class="ph-logo h-12 w-32 rounded-md bg-white">logo ipsum</div>
-            </div>
-          </div>
-          <img src="assets/img/happyhour-03.jpg" alt="Happy hour de encerramento do Fórum" loading="lazy" class="min-h-[260px] w-full object-cover" />
+        <div class="reveal mx-auto max-w-2xl text-center">
+          <p class="font-body text-sm uppercase tracking-[0.18em] text-lime">O que está incluído</p>
+          <h2 class="mt-3 font-display text-3xl text-mint md:text-4xl">Todos os ingressos dão acesso a</h2>
         </div>
+        <ul class="mx-auto mt-12 grid max-w-4xl gap-5 sm:grid-cols-2 lg:grid-cols-5">
+          <li class="reveal flex flex-col items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-6 text-center" data-delay="1">
+            <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-lime/15 text-lime">
+              <svg aria-hidden="true" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2"/><path d="M13 17v2"/><path d="M13 11v2"/></svg>
+            </span>
+            <span class="font-body text-sm font-semibold text-mint">Acesso a todos os painéis</span>
+          </li>
+          <li class="reveal flex flex-col items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-6 text-center" data-delay="2">
+            <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-lime/15 text-lime">
+              <svg aria-hidden="true" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v2"/><path d="M14 2v2"/><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path d="M6 2v2"/></svg>
+            </span>
+            <span class="font-body text-sm font-semibold text-mint">Coffee break</span>
+          </li>
+          <li class="reveal flex flex-col items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-6 text-center" data-delay="3">
+            <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-lime/15 text-lime">
+              <svg aria-hidden="true" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+            </span>
+            <span class="font-body text-sm font-semibold text-mint">Almoço &amp; Networking</span>
+          </li>
+          <li class="reveal flex flex-col items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-6 text-center" data-delay="4">
+            <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-lime/15 text-lime">
+              <svg aria-hidden="true" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 22h8"/><path d="M12 11v11"/><path d="m19 3-7 8-7-8Z"/></svg>
+            </span>
+            <span class="font-body text-sm font-semibold text-mint">Happy Hour</span>
+          </li>
+          <li class="reveal flex flex-col items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-6 text-center sm:col-span-2 lg:col-span-1" data-delay="4">
+            <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-lime/15 text-lime">
+              <svg aria-hidden="true" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/><circle cx="12" cy="8" r="6"/></svg>
+            </span>
+            <span class="font-body text-sm font-semibold text-mint">Certificado de participação</span>
+          </li>
+        </ul>
       </div>
     </section>
   </main>
 
-  <!-- ===== FOOTER (idêntico ao index) ===== -->
-  <footer id="contato" class="bg-accent border-t border-white/5">
-    <div class="mx-auto flex max-w-content flex-col items-center gap-8 px-4 py-12 md:flex-row md:justify-between md:px-8">
-      <div class="flex flex-col items-center gap-8 md:flex-row md:gap-16">
-        <!-- [PLACEHOLDER] logo traz "2025"; trocar pela versão 2027 -->
-        <img src="assets/logo-new-light.svg" alt="Fórum do Agronegócio" class="h-16 w-auto md:h-20" />
+  <!-- ====================================================================
+       FOOTER (idêntico ao index)
+       ==================================================================== -->
+  <footer id="rodape" class="bg-accent border-t border-white/10">
+    <div class="mx-auto flex max-w-content flex-col gap-8 px-4 py-12 md:px-8">
+      <div class="flex flex-col items-center gap-8 md:flex-row md:items-center md:justify-between">
+        <div class="flex flex-col items-center gap-3 md:flex-row md:gap-5">
+          <img src="assets/logo-new-light.svg" alt="Fórum do Agronegócio 2026" class="h-14 w-auto md:h-16" />
+          <span class="font-display text-sm text-mint/80">Fórum do Agronegócio 2026</span>
+        </div>
         <nav class="flex flex-wrap items-center justify-center gap-x-8 gap-y-2" aria-label="Navegação do rodapé">
           <a href="programacao.html" class="text-sm text-mint transition-opacity hover:opacity-70">Programação</a>
           <a href="index.html#palestrantes" class="text-sm text-mint transition-opacity hover:opacity-70">Palestrantes</a>
           <a href="index.html#patrocinio" class="text-sm text-mint transition-opacity hover:opacity-70">Patrocínio</a>
-          <a href="index.html#contato" class="text-sm text-mint transition-opacity hover:opacity-70">Contato</a>
+          <a href="contato.html" class="text-sm text-mint transition-opacity hover:opacity-70">Contato</a>
         </nav>
+        <div class="flex items-center gap-3">
+          <a href="https://www.instagram.com/sociedaderuraldoparana" target="_blank" rel="noopener noreferrer" aria-label="Instagram da SRP" class="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-mint transition-colors hover:border-lime hover:text-lime">
+            <svg aria-hidden="true" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          </a>
+          <a href="https://www.facebook.com/sociedaderuraldoparana" target="_blank" rel="noopener noreferrer" aria-label="Facebook da SRP" class="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-mint transition-colors hover:border-lime hover:text-lime">
+            <svg aria-hidden="true" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/sociedade-rural-do-parana" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn da SRP" class="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-mint transition-colors hover:border-lime hover:text-lime">
+            <svg aria-hidden="true" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
       </div>
-      <a href="https://www.ldnasa.com.br" target="_blank" rel="noopener noreferrer" aria-label="LDNA S/A - Agência Digital">
-        <img src="assets/logo-ldnasa-footer.svg" alt="LDNA S/A - Agência Digital" class="h-9 w-auto" />
-      </a>
+      <div class="flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 md:flex-row">
+        <p class="font-body text-xs text-slate-400">© 2026 Fórum do Agronegócio · Realização Sociedade Rural do Paraná</p>
+        <a href="https://www.ldnasa.com.br" target="_blank" rel="noopener noreferrer" aria-label="LDNA S/A - Agência Digital">
+          <img src="assets/logo-ldnasa-footer.svg" alt="LDNA S/A - Agência Digital" class="h-8 w-auto" />
+        </a>
+      </div>
     </div>
   </footer>
 
-  <!-- dados dos ingressos (placeholder) -> renderizados via JS -->
+  <!-- dados dos ingressos (edição 2026) -> renderizados via JS -->
   <script>
-    // [PLACEHOLDER] tipos e preços de exemplo (Caio troca depois)
+    // Preços de PRÉ-VENDA. [PLACEHOLDER de lote] - mudam conforme o lote (cliente avisa).
     const INGRESSOS = [
-      { nome: "Ingresso Sócio SRP", preco: "R$ XXX", destaque: false,
-        inclui: ["Acesso a todos os painéis", "Almoço + coffee break", "Happy hour de encerramento"] },
-      { nome: "Ingresso Empresarial Sócio", preco: "R$ XXX", destaque: true,
-        inclui: ["Acesso a todos os painéis", "Almoço + coffee break", "Happy hour de encerramento", "Lugar reservado para empresas sócias"] },
-      { nome: "Ingresso Não-Sócio", preco: "R$ XXX", destaque: false,
-        inclui: ["Acesso a todos os painéis", "Almoço + coffee break", "Happy hour de encerramento"] },
-      { nome: "Ingresso Empresarial Não-Sócio", preco: "R$ XXX", destaque: false,
-        inclui: ["Acesso a todos os painéis", "Almoço + coffee break", "Happy hour de encerramento", "Condição para empresas"] },
-      { nome: "Ingresso Estudante", preco: "R$ XXX", destaque: false,
-        inclui: ["Acesso a todos os painéis", "Coffee break", "Mediante comprovação de matrícula"] },
-      { nome: "Programa Agro+", preco: "Gratuito", destaque: false, badge: "Estudantes",
-        inclui: ["Vagas limitadas para estudantes", "Acesso aos painéis", "Sujeito a inscrição e seleção"] },
+      {
+        nome: "Ingresso Sócio SRP",
+        preco: "Gratuito",
+        free: true,
+        destaque: true,
+        nota: "Exclusivo para sócios da Sociedade Rural do Paraná.",
+      },
+      {
+        nome: "Ingresso Não-Sócio",
+        preco: "R$ 249,00",
+        preVenda: true,
+        nota: "Acesso individual ao Fórum do Agronegócio 2026.",
+      },
+      {
+        nome: "Ingresso Empresarial",
+        preco: "R$ 219,00",
+        preVenda: true,
+        nota: "Condição válida para 4+ ingressos por CNPJ.",
+      },
     ];
     (function renderTickets() {
       const grid = document.getElementById("tickets-grid");
       if (!grid) return;
       grid.innerHTML = INGRESSOS.map((t, i) => `
-        <article class="card-hover reveal flex flex-col rounded-lg border ${t.destaque ? "border-primary" : "border-border"} bg-white p-6 shadow-card" data-delay="${(i % 3) + 1}">
-          ${t.destaque ? '<span class="mb-3 inline-block w-max rounded-full bg-primary px-3 py-1 font-display text-[10px] uppercase tracking-wide text-white">Mais procurado</span>' : ""}
-          ${t.badge ? `<span class="mb-3 inline-block w-max rounded-full bg-secondary px-3 py-1 font-display text-[10px] uppercase tracking-wide text-white">${t.badge}</span>` : ""}
-          <h2 class="font-display text-lg text-accent">${t.nome}</h2>
-          <p class="mt-2 font-display text-3xl text-secondary">${t.preco} <span class="align-middle font-body text-xs uppercase tracking-wide text-on-surface">[placeholder]</span></p>
-          <ul class="mt-5 flex-1 space-y-2 font-body text-sm text-on-surface">
-            ${t.inclui.map((it) => `<li class="flex items-start gap-2"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>${it}</span></li>`).join("")}
-          </ul>
-          <a href="#" class="mt-6 rounded-full ${t.destaque ? "bg-primary" : "bg-secondary"} px-6 py-3 text-center font-display text-sm uppercase tracking-wide text-white transition-transform hover:scale-[1.03]">Comprar</a>
+        <article class="card-hover reveal relative flex flex-col overflow-hidden rounded-2xl border ${t.destaque ? "border-primary" : "border-border"} bg-white p-7 shadow-card md:p-8" data-delay="${i + 1}">
+          ${t.preVenda ? '<span class="absolute right-4 top-4 rounded-full bg-lime/15 px-3 py-1 font-display text-[10px] uppercase tracking-wide text-primary">Pré-venda</span>' : ""}
+          ${t.destaque ? '<span class="absolute right-4 top-4 rounded-full bg-primary px-3 py-1 font-display text-[10px] uppercase tracking-wide text-white">Sócios</span>' : ""}
+          <h2 class="font-display text-xl text-accent">${t.nome}</h2>
+          <p class="mt-3 font-display ${t.free ? "text-3xl text-primary" : "text-4xl text-secondary"}">${t.preco}</p>
+          <p class="mt-3 flex-1 font-body text-sm leading-relaxed text-on-surface">${t.nota}</p>
+          <a href="#" class="mt-7 rounded-full ${t.destaque ? "bg-primary" : "bg-secondary"} px-6 py-3.5 text-center font-display text-sm uppercase tracking-wide text-white transition-transform hover:scale-[1.03]">${t.free ? "Garantir gratuito" : "Garantir ingresso"}</a>
         </article>`
       ).join("");
     })();

@@ -12,3 +12,6 @@ node_modules/
 
 # Ferramentas locais do Claude Code (config de preview)
 .claude/
+
+# Backups de trabalho dos recortes de palestrantes
+assets/img/palestrantes/cutout/full/

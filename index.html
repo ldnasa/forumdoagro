@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fórum do Agronegócio 2027 - Agro 360</title>
-  <meta name="description" content="Fórum do Agronegócio 2027 - Parque Ney Braga Eventos, Londrina - PR. Um olhar 360 sobre o agro brasileiro: competitivo, sustentável e bem compreendido." />
+  <title>Fórum do Agronegócio 2026 - O agro que produz, conecta e inspira</title>
+  <meta name="description" content="Fórum do Agronegócio 2026 - 03 de setembro, Parque Ney Braga Eventos, Londrina - PR. O agro que produz, conecta e inspira. 7ª edição, realização Sociedade Rural do Paraná." />
 
   <!-- Google Fonts: Special Gothic Expanded One (títulos) + Bricolage Grotesque (corpo) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -54,104 +54,102 @@
 <body class="bg-background font-body text-accent">
 
   <!-- ====================================================================
-       HEADER (ALTERAR) - base Figma, sem "Ingressos" na nav, botão à direita
-       Logo contém "2025" no vetor -> [PLACEHOLDER: trocar pela arte 2027]
+       HEADER UNIFICADO (ALTERAR) - menu + contador numa única barra fixa
+       opaca e persistente. Ref de comportamento: brasil.tastefestivals.com
+       Esquerda: menu | Centro: logo | Direita: contagem regressiva + CTA
        ==================================================================== -->
-  <header id="site-header" class="fixed inset-x-0 top-0 z-50 transition-shadow">
-    <div class="mx-auto flex max-w-content items-center justify-between gap-4 px-4 py-3 md:px-8">
-      <!-- pill: logo + nav -->
-      <div class="flex items-center gap-4 rounded-lg bg-mint px-4 py-2 shadow-card md:gap-7 md:pr-7">
-        <a href="index.html" class="shrink-0" aria-label="Fórum do Agronegócio - início">
-          <!-- Logo nova (cores 2027: navy / azul / terracota). Se o vetor ainda trouxer ano, trocar pela arte final 2027 -->
-          <img src="assets/logo-new.svg" alt="Fórum do Agronegócio" class="h-9 w-auto md:h-11" />
+  <header id="site-header" class="fixed inset-x-0 top-0 z-50 bg-accent/95 shadow-card backdrop-blur-sm">
+    <div class="mx-auto max-w-content px-4 py-3 md:px-8">
+      <div class="grid grid-cols-[auto_1fr_auto] items-center gap-3 md:grid-cols-3 md:gap-4">
+
+        <!-- ESQUERDA: nav (desktop) + hambúrguer (mobile) -->
+        <div class="flex items-center">
+          <nav class="hidden items-center gap-1 md:flex" aria-label="Navegação principal">
+            <a href="programacao.html" class="rounded px-2.5 py-1 text-sm text-mint/85 transition-colors hover:text-lime">Programação</a>
+            <a href="index.html#palestrantes" class="rounded px-2.5 py-1 text-sm text-mint/85 transition-colors hover:text-lime">Palestrantes</a>
+            <a href="index.html#patrocinio" class="rounded px-2.5 py-1 text-sm text-mint/85 transition-colors hover:text-lime">Patrocínio</a>
+            <a href="contato.html" class="rounded px-2.5 py-1 text-sm text-mint/85 transition-colors hover:text-lime">Contato</a>
+          </nav>
+          <button id="menu-toggle" class="rounded-lg bg-white/10 p-2.5 text-mint md:hidden" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+            <svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg>
+          </button>
+        </div>
+
+        <!-- CENTRO: logo do evento -->
+        <a href="index.html" class="flex justify-center" aria-label="Fórum do Agronegócio - início">
+          <img src="assets/logo-new-light.svg" alt="Fórum do Agronegócio 2026" class="h-7 w-auto md:h-[38px]" />
         </a>
-        <nav class="hidden items-center gap-1 md:flex" aria-label="Navegação principal">
-          <a href="programacao.html" class="rounded px-2 py-1 text-sm text-on-surface transition-colors hover:text-secondary">Programação</a>
-          <a href="index.html#palestrantes" class="rounded px-2 py-1 text-sm text-on-surface transition-colors hover:text-secondary">Palestrantes</a>
-          <a href="index.html#patrocinio" class="rounded px-2 py-1 text-sm text-on-surface transition-colors hover:text-secondary">Patrocínio</a>
-          <a href="index.html#contato" class="rounded px-2 py-1 text-sm text-on-surface transition-colors hover:text-secondary">Contato</a>
-        </nav>
+
+        <!-- DIREITA: contagem regressiva (lg+) + CTA ingresso -->
+        <div class="flex items-center justify-end gap-3 md:gap-4">
+          <div class="hidden items-center gap-2.5 font-display text-lime lg:flex" aria-label="Contagem regressiva para o evento">
+            <span class="flex items-baseline gap-1"><span data-cd="days" class="text-lg leading-none">00</span><span class="text-[10px] uppercase text-slate-400">d</span></span>
+            <span class="flex items-baseline gap-1"><span data-cd="hours" class="text-lg leading-none">00</span><span class="text-[10px] uppercase text-slate-400">h</span></span>
+            <span class="flex items-baseline gap-1"><span data-cd="min" class="text-lg leading-none">00</span><span class="text-[10px] uppercase text-slate-400">m</span></span>
+            <span class="flex items-baseline gap-1"><span data-cd="sec" class="text-lg leading-none">00</span><span class="text-[10px] uppercase text-slate-400">s</span></span>
+          </div>
+          <a href="ingressos.html" class="btn-ticket shrink-0 bg-primary px-4 py-2.5 font-display text-xs uppercase tracking-[0.08em] text-white transition-transform hover:scale-[1.03] md:px-6 md:text-[13px]">
+            <span class="hidden sm:inline">Garanta seu ingresso</span>
+            <span class="sm:hidden">Ingressos</span>
+          </a>
+        </div>
       </div>
 
-      <div class="flex items-center gap-2">
-        <!-- botão de ingresso (único; não duplicado pela barra do contador) -->
-        <a href="ingressos.html"
-           class="btn-ticket hidden bg-primary px-7 py-3 font-display text-[15px] uppercase tracking-[0.09em] text-white transition-transform hover:scale-[1.03] sm:inline-block">
-          Ingressos
-        </a>
-        <!-- hambúrguer mobile -->
-        <button id="menu-toggle" class="rounded-lg bg-mint p-3 shadow-card md:hidden" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
-          <!-- ICONE: Lucide "menu" -->
-          <svg aria-hidden="true" class="h-5 w-5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg>
-        </button>
+      <!-- contador compacto (mobile/tablet, abaixo de lg) -->
+      <div class="mt-2.5 flex items-center justify-center gap-3 border-t border-white/10 pt-2.5 font-display text-lime lg:hidden">
+        <span class="text-[10px] uppercase tracking-[0.18em] text-slate-400">Faltam</span>
+        <span class="flex items-baseline gap-1"><span data-cd="days" class="text-base leading-none">00</span><span class="text-[9px] uppercase text-slate-400">d</span></span>
+        <span class="flex items-baseline gap-1"><span data-cd="hours" class="text-base leading-none">00</span><span class="text-[9px] uppercase text-slate-400">h</span></span>
+        <span class="flex items-baseline gap-1"><span data-cd="min" class="text-base leading-none">00</span><span class="text-[9px] uppercase text-slate-400">m</span></span>
+        <span class="flex items-baseline gap-1"><span data-cd="sec" class="text-base leading-none">00</span><span class="text-[9px] uppercase text-slate-400">s</span></span>
       </div>
     </div>
 
     <!-- menu mobile -->
-    <div id="mobile-menu" class="mobile-menu mx-4 rounded-lg bg-mint shadow-card md:hidden">
+    <div id="mobile-menu" class="mobile-menu mx-4 mt-2 rounded-lg bg-white/10 backdrop-blur-sm md:hidden">
       <nav class="flex flex-col p-2" aria-label="Navegação mobile">
-        <a href="programacao.html" class="rounded px-3 py-3 text-sm text-on-surface hover:bg-background">Programação</a>
-        <a href="index.html#palestrantes" class="rounded px-3 py-3 text-sm text-on-surface hover:bg-background">Palestrantes</a>
-        <a href="index.html#patrocinio" class="rounded px-3 py-3 text-sm text-on-surface hover:bg-background">Patrocínio</a>
-        <a href="index.html#contato" class="rounded px-3 py-3 text-sm text-on-surface hover:bg-background">Contato</a>
-        <a href="ingressos.html" class="mt-1 rounded-full bg-primary px-3 py-3 text-center font-display text-sm uppercase tracking-wide text-white">Ingressos</a>
+        <a href="programacao.html" class="rounded px-3 py-3 text-sm text-mint hover:bg-white/10">Programação</a>
+        <a href="index.html#palestrantes" class="rounded px-3 py-3 text-sm text-mint hover:bg-white/10">Palestrantes</a>
+        <a href="index.html#patrocinio" class="rounded px-3 py-3 text-sm text-mint hover:bg-white/10">Patrocínio</a>
+        <a href="contato.html" class="rounded px-3 py-3 text-sm text-mint hover:bg-white/10">Contato</a>
       </nav>
     </div>
   </header>
 
-  <!-- ====================================================================
-       CONTADOR REGRESSIVO (CONSTRUIR) - barra fina sticky sob o header
-       ==================================================================== -->
-  <div id="countdown-bar" class="countdown-bar fixed inset-x-0 top-[72px] z-40 md:top-[84px]">
-    <div class="mx-auto max-w-content px-4 md:px-8">
-      <div class="flex flex-wrap items-center justify-center gap-x-5 gap-y-1 rounded-lg bg-accent/95 px-6 py-3 text-mint shadow-card backdrop-blur-sm md:justify-between">
-      <p class="font-body text-xs uppercase tracking-[0.18em] text-slate-300">Contagem regressiva</p>
-      <div class="flex items-center gap-3 font-display text-lime md:gap-5">
-        <span class="flex items-baseline gap-1"><span data-cd="days" class="text-lg md:text-xl">00</span><span class="text-[10px] uppercase text-slate-400">dias</span></span>
-        <span class="flex items-baseline gap-1"><span data-cd="hours" class="text-lg md:text-xl">00</span><span class="text-[10px] uppercase text-slate-400">h</span></span>
-        <span class="flex items-baseline gap-1"><span data-cd="min" class="text-lg md:text-xl">00</span><span class="text-[10px] uppercase text-slate-400">min</span></span>
-        <span class="flex items-baseline gap-1"><span data-cd="sec" class="text-lg md:text-xl">00</span><span class="text-[10px] uppercase text-slate-400">seg</span></span>
-      </div>
-      <!-- botão controlado por vendasAbertas (main.js). hidden por padrão -->
-        <a id="countdown-cta" href="ingressos.html" class="hidden rounded-full bg-primary px-4 py-1.5 font-display text-xs uppercase tracking-wide text-white">Garantir ingresso</a>
-      </div>
-    </div>
-  </div>
-
   <main>
     <!-- ==================================================================
-         HERO - banner em vídeo (CONSTRUIR, ref CMO Summit)
+         HERO - banner em vídeo (ref CMO Summit). Tema 2026.
          ================================================================== -->
-    <section id="hero" class="relative flex min-h-[88vh] items-center overflow-hidden pt-28 pb-16">
+    <section id="hero" class="relative flex min-h-[88vh] items-center overflow-hidden pt-36 pb-16 md:pt-28">
       <div class="hero-fallback"></div>
-      <!-- TROCAR: clipe de EXEMPLO (drone sobre lavoura, Mixkit - uso livre).
-           Substituir por assets/video/hero-placeholder.mp4 final mantendo o mesmo nome.
-           poster = frame do próprio vídeo (aparece enquanto carrega) -->
-      <video class="hero-video ken-burns" autoplay muted loop playsinline preload="metadata" poster="assets/img/hero-poster.jpg" aria-hidden="true">
-        <source src="assets/video/hero-placeholder.mp4" type="video/mp4" />
+      <!-- Banner do evento (SAMEDAY Fórum Agro). Mudo, em loop, sem áudio.
+           webm/VP9 como fonte principal + mp4/H264 de fallback (Safari). -->
+      <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/img/hero-poster.jpg" aria-hidden="true">
+        <source src="assets/video/hero.webm" type="video/webm" />
+        <source src="assets/video/hero.mp4" type="video/mp4" />
       </video>
       <!-- overlay escuro para legibilidade -->
       <div class="absolute inset-0 z-10 bg-gradient-to-b from-accent/40 via-accent/55 to-accent"></div>
 
       <div class="relative z-20 mx-auto w-full max-w-content px-4 md:px-8">
-        <div class="flex flex-col items-center gap-8 text-center">
-          <!-- Logo nova - versão clara (reverse) para fundo escuro. Derivada de logo-new.svg -->
-          <img src="assets/logo-new-light.svg" alt="Fórum do Agronegócio" class="h-24 w-auto md:h-32" />
+        <div class="flex flex-col items-center gap-7 text-center">
+          <img src="assets/logo-new-light.svg" alt="Fórum do Agronegócio 2026" class="h-24 w-auto md:h-32" />
+
+          <p class="font-body text-xs uppercase tracking-[0.22em] text-lime md:text-sm">7ª edição · Sociedade Rural do Paraná 80 anos</p>
 
           <h1 class="max-w-3xl font-display text-3xl leading-[1.12] text-mint md:text-5xl">
-            <span class="text-lime">Agro 360:</span> competitivo, sustentável e bem compreendido
+            O agro que <span class="text-lime">produz, conecta e inspira</span>
           </h1>
 
-          <!-- [PLACEHOLDER] data da edição 2027 -->
           <p class="font-display text-base text-slate-100 md:text-xl">
-            <span class="text-lime">[04 de setembro de 2027]</span>
+            <span class="text-lime">03 de setembro de 2026</span>
             <span class="mx-2 text-slate-400">·</span> Parque Ney Braga Eventos
             <span class="mx-2 text-slate-400">·</span> Londrina - PR
           </p>
 
-          <div class="mt-2 flex flex-wrap items-center justify-center gap-3">
+          <div class="mt-1 flex flex-wrap items-center justify-center gap-3">
             <a href="ingressos.html" class="rounded-full bg-primary px-8 py-4 font-display text-base uppercase tracking-[0.06em] text-white shadow-card transition-transform hover:scale-[1.03]">
-              Garantir ingresso
+              Garanta seu ingresso
             </a>
             <a href="#patrocinio" class="rounded-full border border-mint/60 bg-mint/10 px-8 py-4 font-display text-base uppercase tracking-[0.06em] text-mint backdrop-blur-sm transition-colors hover:bg-mint/20">
               Seja patrocinador
@@ -162,27 +160,103 @@
     </section>
 
     <!-- ==================================================================
-         PALESTRANTES (MANTER DO FIGMA) - grid de cards + modal "ver mais"
-         Fotos = placeholder (Caio troca pelas fotos finais)
+         O FÓRUM EM NÚMEROS (ALTERAR) - reposicionado ANTES de palestrantes
+         (ordem do doc: Números antes de Sobre). Apenas a versão imersiva
+         (cards full-bleed com número sobre a foto).
          ================================================================== -->
-    <section id="palestrantes" class="bg-accent py-20 md:py-28">
+    <section id="numeros" class="bg-accent py-20 md:py-28">
       <div class="mx-auto max-w-content px-4 md:px-8">
-        <h2 class="reveal mb-12 font-display text-3xl text-mint md:text-4xl">Palestrantes</h2>
-        <div id="speakers-grid" class="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-5">
-          <!-- cards gerados a partir da lista do Figma -->
+        <div class="reveal mb-10">
+          <p class="font-body text-sm uppercase tracking-[0.18em] text-lime">Edições anteriores</p>
+          <h2 class="mt-2 font-display text-3xl text-mint md:text-4xl">O Fórum em números</h2>
         </div>
-        <p class="reveal mt-6 font-body text-sm text-slate-400">Nomes da edição anterior como exemplo. <span class="font-semibold text-slate-300">[PLACEHOLDER - lista final 2027]</span></p>
+
+        <!-- cards imersivos (imagem full-bleed + número sobre a foto, ref CMO Summit) -->
+        <div class="grid gap-5 sm:grid-cols-3">
+          <article class="card-hover reveal relative overflow-hidden rounded-xl" data-delay="1">
+            <img src="assets/img/site/numeros-participantes.jpg" alt="Participantes em edições anteriores" loading="lazy" class="absolute inset-0 h-full w-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-accent via-accent/75 to-accent/30"></div>
+            <div class="relative flex aspect-[4/5] flex-col items-center justify-center px-5 text-center">
+              <p class="font-display text-5xl text-lime drop-shadow-lg md:text-6xl" data-countup="2300" data-prefix="+">+0</p>
+              <p class="mt-2 max-w-[16ch] font-body text-sm font-semibold text-mint">Participantes</p>
+            </div>
+          </article>
+          <article class="card-hover reveal relative overflow-hidden rounded-xl" data-delay="2">
+            <img src="assets/img/site/numeros-palestrantes.jpg" alt="Palestrantes e painelistas em edições anteriores" loading="lazy" class="absolute inset-0 h-full w-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-accent via-accent/75 to-accent/30"></div>
+            <div class="relative flex aspect-[4/5] flex-col items-center justify-center px-5 text-center">
+              <p class="font-display text-5xl text-lime drop-shadow-lg md:text-6xl" data-countup="60" data-prefix="+">+0</p>
+              <p class="mt-2 max-w-[16ch] font-body text-sm font-semibold text-mint">Palestrantes e painelistas</p>
+            </div>
+          </article>
+          <article class="card-hover reveal relative overflow-hidden rounded-xl" data-delay="3">
+            <img src="assets/img/site/numeros-patrocinadores.jpg" alt="Patrocinadores e parceiros em edições anteriores" loading="lazy" class="absolute inset-0 h-full w-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-accent via-accent/75 to-accent/30"></div>
+            <div class="relative flex aspect-[4/5] flex-col items-center justify-center px-5 text-center">
+              <p class="font-display text-5xl text-lime drop-shadow-lg md:text-6xl" data-countup="50" data-prefix="+">+0</p>
+              <p class="mt-2 max-w-[18ch] font-body text-sm font-semibold text-mint">Patrocinadores e parceiros institucionais</p>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
     <!-- ==================================================================
-         PROGRAMAÇÃO - chamada na home (ALTERAR) - resumo + CTA
+         SOBRE O EVENTO (ALTERAR, ref Gaffff) - reposicionado ANTES de
+         palestrantes (depois de Números, ordem do doc). Foto + texto 2026.
          ================================================================== -->
-    <section id="programacao" class="bg-mint py-20 md:py-28">
+    <section id="sobre" class="bg-background py-20 md:py-28">
+      <div class="mx-auto grid max-w-content items-center gap-10 px-4 md:grid-cols-2 md:px-8">
+        <div class="reveal relative">
+          <img src="assets/img/site/sobre-evento.jpg" alt="Plateia do Fórum do Agronegócio" loading="lazy" class="aspect-[4/3] w-full rounded-2xl object-cover shadow-card" />
+        </div>
+        <div class="reveal" data-delay="1">
+          <p class="font-body text-sm uppercase tracking-[0.18em] text-secondary">7ª edição · 2026</p>
+          <h2 class="mt-2 font-display text-3xl text-accent md:text-4xl">Sobre o Evento</h2>
+          <div class="mt-4 space-y-4 font-body text-base leading-relaxed text-on-surface md:text-lg">
+            <p>O Fórum do Agronegócio, promovido pela Sociedade Rural do Paraná, é um dos principais encontros de lideranças, especialistas e produtores para discutir os caminhos do setor e as transformações que impactam o agro brasileiro.</p>
+            <p>Em 2026, ano em que a entidade celebra seus 80 anos de história, a 7ª edição do Fórum traz o tema: <strong class="font-semibold text-accent">"O agro que produz, conecta e inspira"</strong>.</p>
+            <p>Mais do que debater tecnologia, produtividade e mercados, o Fórum propõe uma reflexão sobre o papel do Brasil no cenário global e a conexão entre quem produz no campo e quem consome na cidade.</p>
+            <p>Um ambiente de conteúdo, relacionamento e visão de futuro, reunindo os protagonistas que impulsionam a transformação do agronegócio.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         PALESTRANTES (ALTERAR) - carrossel rotativo. Cada card: foto, nome,
+         cargo e logo da instituição sobreposta, com fundo único do evento.
+         Cards renderizados via JS (3 confirmados + placeholders).
+         ================================================================== -->
+    <section id="palestrantes" class="bg-mint py-20 md:py-28">
+      <div class="mx-auto max-w-content px-4 md:px-8">
+        <div class="reveal mb-10 flex items-end justify-between gap-4">
+          <div>
+            <p class="font-body text-sm uppercase tracking-[0.18em] text-secondary">Quem sobe ao palco</p>
+            <h2 class="mt-2 font-display text-3xl text-accent md:text-4xl">Palestrantes</h2>
+          </div>
+          <!-- controles do carrossel (desktop) -->
+          <div class="hidden shrink-0 gap-2 md:flex">
+            <button data-carousel-prev="speakers" class="carousel-btn carousel-btn--dark" aria-label="Palestrante anterior"><svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+            <button data-carousel-next="speakers" class="carousel-btn carousel-btn--dark" aria-label="Próximo palestrante"><svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+          </div>
+        </div>
+
+        <div id="speakers-carousel" class="no-scrollbar flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-2" data-carousel="speakers">
+          <!-- slides gerados via JS -->
+        </div>
+        <p class="reveal mt-5 font-body text-sm text-on-surface">Palestrantes e mediadores confirmados. <span class="font-semibold text-secondary">[lista em atualização]</span></p>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         PROGRAMAÇÃO - chamada na home (ALTERAR) - recorte real + CTA
+         ================================================================== -->
+    <section id="programacao" class="bg-background py-20 md:py-28">
       <div class="mx-auto max-w-content px-4 md:px-8">
         <div class="reveal mb-10 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
           <div>
-            <p class="font-body text-sm uppercase tracking-[0.18em] text-secondary">Um dia inteiro de conteúdo</p>
+            <p class="font-body text-sm uppercase tracking-[0.18em] text-secondary">03 de setembro · um dia inteiro de conteúdo</p>
             <h2 class="mt-2 font-display text-3xl text-accent md:text-4xl">Programação</h2>
           </div>
           <a href="programacao.html" class="rounded-full bg-secondary px-6 py-3 font-display text-sm uppercase tracking-wide text-white transition-transform hover:scale-[1.03]">
@@ -190,10 +264,10 @@
           </a>
         </div>
 
-        <!-- recorte da grade (tabela) - conteúdo 2025 como exemplo -->
-        <div class="reveal overflow-hidden rounded-lg border border-border bg-white shadow-card" data-delay="1">
+        <!-- recorte da grade real (1 dia) -->
+        <div class="reveal overflow-hidden rounded-2xl border border-border bg-white shadow-card" data-delay="1">
           <table class="w-full text-left">
-            <thead class="bg-background">
+            <thead class="bg-mint">
               <tr class="font-display text-xs uppercase tracking-wide text-secondary">
                 <th class="w-28 px-5 py-4 md:w-40">Horário</th>
                 <th class="px-5 py-4">Atividade</th>
@@ -201,280 +275,157 @@
             </thead>
             <tbody class="font-body text-accent">
               <tr class="border-t border-border">
-                <td class="px-5 py-4 font-display text-lg text-secondary">08h</td>
-                <td class="px-5 py-4">Credenciamento + Abertura</td>
+                <td class="px-5 py-4 font-display text-lg text-secondary">08h00</td>
+                <td class="px-5 py-4">Credenciamento e recepção</td>
               </tr>
               <tr class="border-t border-border">
-                <td class="px-5 py-4 font-display text-lg text-secondary">09h15</td>
-                <td class="px-5 py-4"><span class="font-semibold">Painel 1</span> - Geopolítica no agro: produção eficiente e acesso a mercados</td>
+                <td class="px-5 py-4 font-display text-lg text-secondary">09h45</td>
+                <td class="px-5 py-4"><span class="font-semibold">Painel 1</span> - Brasil como potência agro: o que define os próximos anos</td>
               </tr>
               <tr class="border-t border-border">
-                <td class="px-5 py-4 font-display text-lg text-secondary">10h30</td>
-                <td class="px-5 py-4"><span class="font-semibold">Painel 2</span> - Impulsionando produtividade e competitividade no setor</td>
+                <td class="px-5 py-4 font-display text-lg text-secondary">12h00</td>
+                <td class="px-5 py-4">Almoço e networking</td>
               </tr>
               <tr class="border-t border-border bg-secondary text-white">
-                <td class="px-5 py-4 font-display text-lg text-lime">16h30</td>
-                <td class="px-5 py-4"><span class="font-semibold text-lime">Palestra Magna</span> - Como ser competitivo, sustentável e bem compreendido?</td>
+                <td class="px-5 py-4 font-display text-lg text-lime">16h45</td>
+                <td class="px-5 py-4"><span class="font-semibold text-lime">Palestra Magna</span> - O agro que produz também pode inspirar</td>
+              </tr>
+              <tr class="border-t border-border">
+                <td class="px-5 py-4 font-display text-lg text-secondary">17h45</td>
+                <td class="px-5 py-4">Happy Hour</td>
               </tr>
             </tbody>
           </table>
         </div>
-        <p class="reveal mt-4 font-body text-sm text-on-surface">Recorte da grade. Veja horários, painéis, moderadores e palestrantes na <a href="programacao.html" class="font-semibold text-secondary underline">programação completa</a>.</p>
+        <p class="reveal mt-4 font-body text-sm text-on-surface">Veja todos os painéis, mediadores e palestrantes na <a href="programacao.html" class="font-semibold text-secondary underline">programação completa</a>.</p>
       </div>
     </section>
 
     <!-- ==================================================================
-         SOBRE O EVENTO (ALTERAR, ref Gaffff) - foto + texto lado a lado
+         INGRESSOS + PATROCÍNIOS (ALTERAR) - bloco unificado, dois cards
+         lado a lado. Ref de estrutura: Expo Londrina.
          ================================================================== -->
-    <section id="sobre" class="bg-background py-20 md:py-28">
-      <div class="mx-auto grid max-w-content items-center gap-10 px-4 md:grid-cols-2 md:px-8">
-        <div class="reveal relative">
-          <img src="assets/img/evento-2024.jpg" alt="Plateia do Fórum do Agronegócio na edição 2024" loading="lazy" class="aspect-[4/3] w-full rounded-lg object-cover" />
-          <span class="absolute bottom-4 left-4 rounded-md bg-primary px-4 py-1.5 font-display text-sm text-white">Edição 2024</span>
-        </div>
-        <div class="reveal" data-delay="1">
-          <h2 class="font-display text-3xl text-accent md:text-4xl">Sobre o Evento</h2>
-          <div class="mt-4 space-y-4 font-body text-base leading-relaxed text-on-surface md:text-lg">
-            <p>O Fórum do Agronegócio é um evento anual promovido pela Sociedade Rural do Paraná, reconhecido por reunir, em um só lugar, toda a cadeia produtiva do setor. Em sua 6ª edição, propõe um olhar 360º sobre o agro brasileiro, debatendo caminhos para torná-lo mais competitivo, sustentável e bem compreendido.</p>
-            <p>O objetivo é promover a troca de ideias, a escuta qualificada e a construção de soluções para os desafios que se impõem ao agro diante de um mundo em transformação. Um espaço de diálogo estratégico que conecta lideranças, estimula a inovação e contribui para o fortalecimento de um setor essencial para o presente e para o futuro do Brasil e do planeta.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================================================================
-         NÚMEROS DO EVENTO (CONSTRUIR, ref CMO Summit) - cards + count-up
-         Contagens = [PLACEHOLDER] (mantidas as atuais como exemplo)
-         ================================================================== -->
-    <section id="numeros" class="bg-accent py-20 md:py-28">
+    <section id="ingressos-patrocinio" class="bg-mint py-20 md:py-28">
       <div class="mx-auto max-w-content px-4 md:px-8">
-        <div class="reveal mb-12 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
-          <div class="max-w-2xl">
-            <p class="font-body text-sm uppercase tracking-[0.18em] text-lime">O Fórum em números</p>
-            <h2 class="mt-2 font-display text-3xl text-mint md:text-4xl">Os números não mentem</h2>
-            <p class="mt-3 font-body text-base text-slate-300">Edições anteriores em escala.</p>
-          </div>
-          <!-- toggle A/B discreto no canto -->
-          <div class="inline-flex shrink-0 self-start rounded-full border border-white/15 bg-white/10 p-0.5 md:self-auto" role="group" aria-label="Alternar layout dos números">
-            <button data-numbers-toggle="classic" aria-pressed="true" class="toggle-btn rounded-full bg-secondary px-3.5 py-1.5 font-display text-[11px] uppercase tracking-wide text-white">Padrão</button>
-            <button data-numbers-toggle="cmo" aria-pressed="false" class="toggle-btn rounded-full px-3.5 py-1.5 font-display text-[11px] uppercase tracking-wide text-slate-300">Imersivo</button>
-          </div>
-        </div>
-
-        <!-- VIEW A: padrão (imagem em cima, número embaixo) -->
-        <div class="numbers-view is-active" data-numview="classic">
-          <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <!-- card 1 -->
-          <article class="card-hover reveal overflow-hidden rounded-lg border border-white/10 bg-white/5 shadow-card" data-delay="1">
-            <img src="assets/img/evento-2024.jpg" alt="Participantes do Fórum em edição anterior" loading="lazy" class="aspect-[16/10] w-full object-cover" />
-            <div class="p-6">
-              <p class="font-display text-5xl text-lime" data-countup="2000" data-prefix="+">+0</p>
-              <p class="mt-2 font-body text-base font-semibold text-mint">participantes presenciais</p>
+        <div class="grid gap-6 md:grid-cols-2">
+          <!-- Bloco 1: Ingressos -->
+          <article class="reveal group relative overflow-hidden rounded-2xl shadow-card">
+            <img src="assets/img/site/ingressos.jpg" alt="" aria-hidden="true" loading="lazy" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient-to-t from-accent via-accent/85 to-accent/45"></div>
+            <div class="relative flex min-h-[340px] flex-col items-start justify-end gap-3 p-8 md:p-10">
+              <img src="assets/logo-new-light.svg" alt="Fórum do Agronegócio" class="mb-1 h-12 w-auto" />
+              <h2 id="ingressos" class="font-display text-2xl leading-tight text-mint md:text-3xl">Garanta seu ingresso para o Fórum 2026</h2>
+              <p class="font-body text-base text-slate-200">Veja as opções e escolha o seu.</p>
+              <a href="ingressos.html" class="mt-3 rounded-full bg-primary px-7 py-3.5 font-display text-sm uppercase tracking-wide text-white transition-transform hover:scale-[1.03]">Ver ingressos</a>
             </div>
           </article>
-          <!-- card 2 -->
-          <article class="card-hover reveal overflow-hidden rounded-lg border border-white/10 bg-white/5 shadow-card" data-delay="2">
-            <img src="assets/img/happyhour-01.jpg" alt="Palestrantes e painelistas em edição anterior" loading="lazy" class="aspect-[16/10] w-full object-cover" />
-            <div class="p-6">
-              <p class="font-display text-5xl text-lime" data-countup="50" data-prefix="+">+0</p>
-              <p class="mt-2 font-body text-base font-semibold text-mint">palestrantes e painelistas</p>
+
+          <!-- Bloco 2: Patrocínios -->
+          <article id="patrocinio" class="reveal group relative overflow-hidden rounded-2xl shadow-card" data-delay="1">
+            <img src="assets/img/patrocinio-networking.jpg" alt="" aria-hidden="true" loading="lazy" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/90 to-secondary/55"></div>
+            <div class="relative flex min-h-[340px] flex-col items-start justify-end gap-3 p-8 md:p-10">
+              <h2 class="font-display text-2xl leading-tight text-mint md:text-3xl">Seja um patrocinador</h2>
+              <p class="font-body text-base text-slate-100">Posicione sua marca ao lado das principais lideranças do agro, ampliando sua visibilidade e fortalecendo conexões estratégicas.</p>
+              <a href="contato.html#patrocinio" class="mt-3 rounded-full bg-primary px-7 py-3.5 font-display text-sm uppercase tracking-wide text-white transition-transform hover:scale-[1.03]">Quero patrocinar</a>
             </div>
           </article>
-          <!-- card 3 -->
-          <article class="card-hover reveal overflow-hidden rounded-lg border border-white/10 bg-white/5 shadow-card sm:col-span-2 lg:col-span-1" data-delay="3">
-            <img src="assets/img/happyhour-02.jpg" alt="Patrocinadores e parceiros em edição anterior" loading="lazy" class="aspect-[16/10] w-full object-cover" />
-            <div class="p-6">
-              <p class="font-display text-5xl text-lime" data-countup="50" data-prefix="+">+0</p>
-              <p class="mt-2 font-body text-base font-semibold text-mint">patrocinadores e parceiros institucionais</p>
-            </div>
-          </article>
-          </div>
-        </div>
-
-        <!-- VIEW B: imersivo (ref CMO Summit) - imagem full-bleed, overlay de contraste,
-             número grande e legenda centralizados sobre a imagem -->
-        <div class="numbers-view" data-numview="cmo">
-          <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <article class="card-hover reveal relative overflow-hidden rounded-lg" data-delay="1">
-              <img src="assets/img/evento-2024.jpg" alt="Participantes do Fórum em edição anterior" loading="lazy" class="absolute inset-0 h-full w-full object-cover" />
-              <div class="absolute inset-0 bg-gradient-to-t from-accent via-accent/75 to-accent/35"></div>
-              <div class="relative flex aspect-[9/10] flex-col items-center justify-center px-6 text-center">
-                <p class="font-display text-6xl text-lime drop-shadow-lg md:text-7xl" data-countup="2000" data-prefix="+">+0</p>
-                <p class="mt-3 max-w-[16ch] font-body text-base font-semibold text-mint">participantes presenciais</p>
-              </div>
-            </article>
-            <article class="card-hover reveal relative overflow-hidden rounded-lg" data-delay="2">
-              <img src="assets/img/happyhour-01.jpg" alt="Palestrantes e painelistas em edição anterior" loading="lazy" class="absolute inset-0 h-full w-full object-cover" />
-              <div class="absolute inset-0 bg-gradient-to-t from-accent via-accent/75 to-accent/35"></div>
-              <div class="relative flex aspect-[9/10] flex-col items-center justify-center px-6 text-center">
-                <p class="font-display text-6xl text-lime drop-shadow-lg md:text-7xl" data-countup="50" data-prefix="+">+0</p>
-                <p class="mt-3 max-w-[16ch] font-body text-base font-semibold text-mint">palestrantes e painelistas</p>
-              </div>
-            </article>
-            <article class="card-hover reveal relative overflow-hidden rounded-lg sm:col-span-2 lg:col-span-1" data-delay="3">
-              <img src="assets/img/happyhour-02.jpg" alt="Patrocinadores e parceiros em edição anterior" loading="lazy" class="absolute inset-0 h-full w-full object-cover" />
-              <div class="absolute inset-0 bg-gradient-to-t from-accent via-accent/75 to-accent/35"></div>
-              <div class="relative flex aspect-[9/10] flex-col items-center justify-center px-6 text-center">
-                <p class="font-display text-6xl text-lime drop-shadow-lg md:text-7xl" data-countup="50" data-prefix="+">+0</p>
-                <p class="mt-3 max-w-[18ch] font-body text-base font-semibold text-mint">patrocinadores e parceiros institucionais</p>
-              </div>
-            </article>
-          </div>
         </div>
       </div>
     </section>
 
     <!-- ==================================================================
-         INGRESSOS - CTA para a página de ingressos (NOVO bloco)
+         QUEM CONSTRÓI O FÓRUM (ALTERAR) - versão clara (definida pelo
+         cliente). A princípio apenas a realização SRP.
          ================================================================== -->
-    <section id="ingressos-cta" class="bg-primary">
-      <div class="mx-auto flex max-w-content flex-col items-start justify-between gap-5 px-4 py-6 md:min-h-[164px] md:flex-row md:items-center md:px-8">
-        <div class="reveal">
-          <h2 class="font-display text-2xl leading-tight text-white md:text-4xl">Garanta seu lugar no Fórum 2027</h2>
-          <p class="mt-1.5 font-body text-sm text-white/90 md:text-base">Ingressos individuais, empresariais e estudante. Veja as opções e escolha o seu.</p>
+    <section id="quem-constroi" class="bg-background pt-16 pb-12 md:pt-20 md:pb-16">
+      <div class="mx-auto max-w-content px-4 text-center md:px-8">
+        <p class="reveal font-body text-[11px] uppercase tracking-[0.2em] text-on-surface/60">Realização</p>
+        <h2 class="reveal mt-2 font-display text-3xl text-accent md:text-4xl" data-delay="1">Quem constrói o Fórum</h2>
+        <div class="reveal mt-5 flex justify-center" data-delay="2">
+          <img src="assets/img/sponsors/realizacao__srp.webp" alt="Sociedade Rural do Paraná" loading="lazy" class="h-32 w-auto object-contain md:h-36" />
         </div>
-        <a href="ingressos.html" class="reveal shrink-0 rounded-full bg-accent px-8 py-4 font-display text-sm uppercase tracking-wide text-mint transition-transform hover:scale-[1.03]">Ver ingressos</a>
+        <!-- [PLACEHOLDER] Demais cotas (Master, Premium, Plus, Apoio, Mídia, Hotéis)
+             entram aqui conforme confirmadas. Layout em versão clara. -->
       </div>
     </section>
 
     <!-- ==================================================================
-         PATROCINADORES (CONSTRUIR) - estilo compacto, eyebrow por cota,
-         logos reais do site atual. Toggle A/B discreto (Clara / Escura).
-         Logos renderizadas via JS a partir de SPONSORS. [PLACEHOLDER 2025]
+         SOBRE A REALIZADORA (ALTERAR) - texto SRP + CTA
          ================================================================== -->
-    <section id="patrocinio" class="bg-background py-20 md:py-28">
-      <div class="mx-auto max-w-content px-4 md:px-8">
-        <div class="reveal mb-12 flex flex-col items-center gap-4 text-center">
-          <h2 class="font-display text-3xl text-accent md:text-4xl">Quem constrói o Fórum</h2>
-          <!-- toggle A/B discreto -->
-          <div class="inline-flex rounded-full border border-border bg-white/70 p-0.5" role="group" aria-label="Alternar versão dos patrocinadores">
-            <button data-sponsors-toggle="light" aria-pressed="true" class="toggle-btn rounded-full bg-secondary px-3.5 py-1.5 font-display text-[11px] uppercase tracking-wide text-white">Clara</button>
-            <button data-sponsors-toggle="dark" aria-pressed="false" class="toggle-btn rounded-full px-3.5 py-1.5 font-display text-[11px] uppercase tracking-wide text-on-surface">Escura</button>
-          </div>
-        </div>
-
-        <!-- VERSÃO CLARA - logos soltas no fundo claro (ref tastefestivals) -->
-        <div class="sponsors-view is-active" data-view="light">
-          <div id="sponsors-light" class="space-y-8"></div>
-        </div>
-
-        <!-- VERSÃO ESCURA - logos em tiles brancos sobre fundo escuro (ref CMO) -->
-        <div class="sponsors-view" data-view="dark">
-          <div class="rounded-lg bg-accent px-6 py-10 md:px-12 md:py-12">
-            <div id="sponsors-dark" class="space-y-8"></div>
-          </div>
-        </div>
+    <section id="realizadora" class="bg-background pb-20 md:pb-28">
+      <div class="mx-auto flex max-w-3xl flex-col items-center gap-5 px-4 text-center md:px-8">
+        <h2 class="reveal font-display text-2xl text-accent md:text-3xl">Sobre a realizadora</h2>
+        <p class="reveal font-body text-base leading-relaxed text-on-surface md:text-lg" data-delay="1">O Fórum do Agronegócio é uma realização da Sociedade Rural do Paraná, entidade que celebra 80 anos de história em 2026 e é referência na defesa, representação e desenvolvimento do agronegócio brasileiro. Ao longo de sua trajetória, a SRP conecta produtores, lideranças e instituições, promovendo iniciativas que impulsionam a inovação, a competitividade e a sustentabilidade do setor.</p>
+        <a href="https://www.srp.com.br" target="_blank" rel="noopener noreferrer" class="reveal rounded-full bg-secondary px-7 py-3.5 font-display text-sm uppercase tracking-wide text-white transition-transform hover:scale-[1.03]" data-delay="2">Conheça a Sociedade Rural do Paraná</a>
       </div>
     </section>
 
     <!-- ==================================================================
-         SEJA PATROCINADOR (CTA) - reposicionado DEPOIS dos patrocinadores
+         LOCAL (ALTERAR - bloco menor) - base Figma + Waze/Maps. Data 2026.
          ================================================================== -->
-    <section id="seja-patrocinador" class="bg-background py-20 md:py-24">
-      <div class="mx-auto max-w-content px-4 md:px-8">
-        <div class="reveal grid items-center gap-8 overflow-hidden rounded-lg bg-secondary md:grid-cols-2">
-          <div class="p-8 md:p-12">
-            <h2 class="font-display text-2xl text-mint md:text-3xl">Seja Patrocinador</h2>
-            <p class="mt-4 font-body text-base leading-relaxed text-slate-100">
-              Entre no Fórum do Agronegócio 2027 e posicione sua marca ao lado das grandes lideranças do setor. Uma oportunidade de gerar visibilidade qualificada, estreitar relações e mostrar que sua empresa está conectada às oportunidades e transformações do agro.
-            </p>
-            <a href="#contato" class="mt-7 inline-block rounded-md bg-primary px-7 py-3 font-display text-sm uppercase tracking-wide text-white transition-transform hover:scale-[1.03]">
-              Quero patrocinar
-            </a>
-          </div>
-          <img src="assets/img/patrocinio-networking.jpg" alt="Networking entre participantes e marcas no Fórum" loading="lazy" class="h-56 w-full object-cover md:h-full md:min-h-[320px]" />
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================================================================
-         SRP-INFO (MANTER DO FIGMA) - sobre a realizadora
-         ================================================================== -->
-    <section class="bg-background pb-20 md:pb-28">
-      <div class="mx-auto flex max-w-content flex-col items-center gap-5 px-4 text-center md:px-8">
-        <div class="reveal flex flex-col items-center gap-4 md:flex-row md:gap-8">
-          <h2 class="font-display text-2xl text-accent md:text-3xl">Sobre a realizadora:</h2>
-          <img src="assets/img/sponsors/realizacao__srp.webp" alt="Sociedade Rural do Paraná" loading="lazy" class="h-28 w-auto object-contain" />
-        </div>
-        <p class="reveal max-w-4xl font-body text-base leading-relaxed text-accent" data-delay="1">
-          Com 79 anos de história, a Sociedade Rural do Paraná é uma das mais respeitadas entidades do agronegócio brasileiro. Atua na promoção do desenvolvimento do setor, na valorização do produtor rural e na articulação de soluções que fortalecem a competitividade e a sustentabilidade do agro.
-        </p>
-        <a href="https://www.srp.com.br" target="_blank" rel="noopener noreferrer" class="reveal rounded-md bg-secondary px-6 py-3 font-display text-base text-background" data-delay="2">www.srp.com.br</a>
-      </div>
-    </section>
-
-    <!-- ==================================================================
-         LOCAL (ALTERAR - foto do parque maior) - base Figma + Waze/Maps
-         ================================================================== -->
-    <section id="local" class="bg-background py-16 md:py-20">
-      <div class="mx-auto grid max-w-content items-stretch gap-6 px-4 md:grid-cols-5 md:px-8">
-        <div class="reveal flex flex-col justify-center gap-6 rounded-lg border border-border bg-mint p-8 md:col-span-2 md:p-10">
-          <h2 class="font-display text-2xl text-accent md:text-3xl">Parque Ney Braga Eventos</h2>
-          <div class="space-y-4 font-body">
-            <p class="flex items-center gap-3 font-display text-lg text-primary">
-              <!-- ICONE: Lucide "calendar" (SVG inline, 24x24, stroke 2, currentColor) -->
+    <section id="local" class="bg-background py-14 md:py-16">
+      <div class="mx-auto grid max-w-content items-stretch gap-6 px-4 md:grid-cols-2 md:px-8">
+        <div class="reveal flex flex-col justify-center gap-4 rounded-2xl border border-border bg-mint p-6 md:p-8">
+          <h2 class="font-display text-2xl text-accent">Parque Ney Braga Eventos</h2>
+          <div class="space-y-3 font-body">
+            <p class="flex items-center gap-3 font-display text-base text-primary">
               <svg aria-hidden="true" class="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
-              <!-- [PLACEHOLDER] data 2027 -->
-              <span>[04 de setembro de 2027]</span>
+              <span>03 de setembro de 2026</span>
             </p>
-            <p class="flex items-start gap-3 text-base text-accent">
-              <!-- ICONE: Lucide "map-pin" -->
+            <p class="flex items-start gap-3 text-sm text-accent">
               <svg aria-hidden="true" class="mt-0.5 h-5 w-5 shrink-0 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
               <span>Av. Tiradentes, 6275 - Jardim Rosicler, Londrina - PR, 86072-000</span>
             </p>
           </div>
           <div class="flex flex-wrap gap-3">
-            <!-- [PLACEHOLDER] links Waze / Google Maps -->
-            <a href="https://waze.com/ul" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full bg-[#009dca] px-5 py-2.5 font-display text-sm uppercase tracking-wide text-white"><img src="assets/img/waze.svg" alt="" aria-hidden="true" class="h-5 w-5" />Waze</a>
-            <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full border border-border bg-white px-5 py-2.5 font-display text-sm uppercase tracking-wide text-accent"><img src="assets/img/google-maps.svg" alt="" aria-hidden="true" class="h-5 w-auto" />Google Maps</a>
+            <a href="https://waze.com/ul" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full bg-[#009dca] px-4 py-2 font-display text-xs uppercase tracking-wide text-white"><img src="assets/img/waze.svg" alt="" aria-hidden="true" class="h-4 w-4" />Waze</a>
+            <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full border border-border bg-white px-4 py-2 font-display text-xs uppercase tracking-wide text-accent"><img src="assets/img/google-maps.svg" alt="" aria-hidden="true" class="h-4 w-auto" />Google Maps</a>
           </div>
         </div>
-        <!-- foto do parque AUMENTADA (3/5) -->
-        <div class="reveal md:col-span-3" data-delay="1">
-          <img src="assets/img/parque.jpg" alt="Parque Ney Braga Eventos, Londrina - PR" loading="lazy" class="h-72 w-full rounded-lg object-cover md:h-full" />
+        <div class="reveal" data-delay="1">
+          <img src="assets/img/parque.jpg" alt="Parque Ney Braga Eventos, Londrina - PR" loading="lazy" class="h-56 w-full rounded-2xl object-cover md:h-full" />
         </div>
       </div>
     </section>
   </main>
 
   <!-- ====================================================================
-       FOOTER (MANTER DO FIGMA) - logo + nav + crédito Londrina S/A
+       FOOTER (ALTERAR) - logo + "Fórum do Agronegócio 2026" + redes SRP +
+       crédito Londrina S/A. Contador saiu daqui (agora na barra do menu).
        ==================================================================== -->
-  <!-- ====================================================================
-       CONTADOR - faixa em destaque acima do footer.
-       State change: a barra fina do topo some quando esta faixa aparece.
-       ==================================================================== -->
-  <section id="countdown-cta-band" class="border-b border-white/10 bg-accent">
-    <div class="reveal mx-auto flex max-w-content flex-col items-center justify-between gap-7 px-4 py-9 text-center md:flex-row md:px-8 md:py-11 md:text-left">
-      <div>
-        <p class="font-body text-xs uppercase tracking-[0.2em] text-lime">Contagem regressiva</p>
-        <div class="mt-3 flex items-end justify-center gap-5 font-display text-lime md:justify-start md:gap-8">
-          <span class="flex flex-col items-center"><span data-cd="days" class="text-4xl leading-none md:text-6xl">00</span><span class="mt-1.5 text-[10px] uppercase tracking-wide text-slate-400">dias</span></span>
-          <span class="flex flex-col items-center"><span data-cd="hours" class="text-4xl leading-none md:text-6xl">00</span><span class="mt-1.5 text-[10px] uppercase tracking-wide text-slate-400">horas</span></span>
-          <span class="flex flex-col items-center"><span data-cd="min" class="text-4xl leading-none md:text-6xl">00</span><span class="mt-1.5 text-[10px] uppercase tracking-wide text-slate-400">min</span></span>
-          <span class="flex flex-col items-center"><span data-cd="sec" class="text-4xl leading-none md:text-6xl">00</span><span class="mt-1.5 text-[10px] uppercase tracking-wide text-slate-400">seg</span></span>
+  <footer id="rodape" class="bg-accent">
+    <div class="mx-auto flex max-w-content flex-col gap-8 px-4 py-12 md:px-8">
+      <div class="flex flex-col items-center gap-8 md:flex-row md:items-center md:justify-between">
+        <div class="flex flex-col items-center gap-3 md:flex-row md:gap-5">
+          <img src="assets/logo-new-light.svg" alt="Fórum do Agronegócio 2026" class="h-14 w-auto md:h-16" />
+          <span class="font-display text-sm text-mint/80">Fórum do Agronegócio 2026</span>
         </div>
-      </div>
-      <a href="ingressos.html" class="shrink-0 rounded-full bg-primary px-9 py-4 font-display text-base uppercase tracking-[0.06em] text-white shadow-card transition-transform hover:scale-[1.03]">Comprar ingresso</a>
-    </div>
-  </section>
-
-  <footer id="contato" class="bg-accent">
-    <div class="mx-auto flex max-w-content flex-col items-center gap-8 px-4 py-12 md:flex-row md:justify-between md:px-8">
-      <div class="flex flex-col items-center gap-8 md:flex-row md:gap-16">
-        <!-- Logo nova - versão clara (reverse) para fundo escuro -->
-        <img src="assets/logo-new-light.svg" alt="Fórum do Agronegócio" class="h-16 w-auto md:h-20" />
         <nav class="flex flex-wrap items-center justify-center gap-x-8 gap-y-2" aria-label="Navegação do rodapé">
           <a href="programacao.html" class="text-sm text-mint transition-opacity hover:opacity-70">Programação</a>
           <a href="index.html#palestrantes" class="text-sm text-mint transition-opacity hover:opacity-70">Palestrantes</a>
           <a href="index.html#patrocinio" class="text-sm text-mint transition-opacity hover:opacity-70">Patrocínio</a>
-          <a href="index.html#contato" class="text-sm text-mint transition-opacity hover:opacity-70">Contato</a>
+          <a href="contato.html" class="text-sm text-mint transition-opacity hover:opacity-70">Contato</a>
         </nav>
+        <!-- redes sociais SRP. [CONFERIR] handles oficiais da Sociedade Rural do Paraná -->
+        <div class="flex items-center gap-3">
+          <a href="https://www.instagram.com/sociedaderuraldoparana" target="_blank" rel="noopener noreferrer" aria-label="Instagram da SRP" class="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-mint transition-colors hover:border-lime hover:text-lime">
+            <svg aria-hidden="true" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          </a>
+          <a href="https://www.facebook.com/sociedaderuraldoparana" target="_blank" rel="noopener noreferrer" aria-label="Facebook da SRP" class="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-mint transition-colors hover:border-lime hover:text-lime">
+            <svg aria-hidden="true" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/sociedade-rural-do-parana" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn da SRP" class="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-mint transition-colors hover:border-lime hover:text-lime">
+            <svg aria-hidden="true" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
       </div>
-      <!-- crédito da agência -->
-      <a href="https://www.ldnasa.com.br" target="_blank" rel="noopener noreferrer" aria-label="LDNA S/A - Agência Digital">
-        <img src="assets/logo-ldnasa-footer.svg" alt="LDNA S/A - Agência Digital" class="h-9 w-auto" />
-      </a>
+      <div class="flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 md:flex-row">
+        <p class="font-body text-xs text-slate-400">© 2026 Fórum do Agronegócio · Realização Sociedade Rural do Paraná</p>
+        <a href="https://www.ldnasa.com.br" target="_blank" rel="noopener noreferrer" aria-label="LDNA S/A - Agência Digital">
+          <img src="assets/logo-ldnasa-footer.svg" alt="LDNA S/A - Agência Digital" class="h-8 w-auto" />
+        </a>
+      </div>
     </div>
   </footer>
 
@@ -483,7 +434,6 @@
        ==================================================================== -->
   <div id="speaker-modal" class="modal fixed inset-0 z-[60] flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="sm-name">
     <div class="absolute inset-0 bg-accent/70 backdrop-blur-sm" data-close></div>
-    <!-- 2 blocos separados por gap de 24px: foto à esquerda, bio à direita -->
     <div class="modal__panel relative flex w-full max-w-2xl flex-col gap-6 sm:min-h-[340px] sm:flex-row">
       <!-- bloco 1: foto -->
       <div class="shrink-0 rounded-3xl bg-white p-1.5 shadow-2xl sm:w-52">
@@ -493,104 +443,91 @@
       <div class="relative flex flex-1 flex-col justify-center rounded-3xl bg-white p-8 shadow-2xl">
         <button class="absolute right-5 top-5 z-20 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-400 transition-colors hover:border-secondary hover:text-secondary" data-close aria-label="Fechar"><svg aria-hidden="true" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
         <h3 id="sm-name" class="pr-10 font-display text-2xl leading-tight text-accent"></h3>
-        <p id="sm-bio" class="mt-4 font-body text-[13px] font-medium uppercase leading-[1.7] tracking-[0.05em] text-secondary"></p>
+        <p id="sm-org" class="mt-1.5 font-body text-xs font-semibold uppercase tracking-[0.08em] text-primary"></p>
+        <p id="sm-bio" class="mt-4 font-body text-[13px] leading-[1.7] text-on-surface"></p>
       </div>
     </div>
   </div>
 
-  <!-- dados dos palestrantes (do Figma) -> renderizados via JS abaixo -->
+  <!-- dados dos palestrantes -> renderizados como carrossel via JS -->
   <script>
-    // Lista do Figma (edição anterior como exemplo). [PLACEHOLDER - lista 2027]
-    // fotos reais extraídas do Figma (genérica/Angela/Pedro). [PLACEHOLDER - fotos 2027]
+    // 3 confirmados (fotos/bios reais) + placeholders para completar o carrossel.
+    // logo = caminho da logo da instituição (sobreposta ao card). "" = placeholder.
     const G = "assets/img/palestrante-generico.jpg";
     const PALESTRANTES = [
-      { name: "Carlos Fávaro", org: "MAPA", photo: G },
-      { name: "Angela Ruiz", org: "Empresa", photo: "assets/img/palestrante-angela.jpg" },
-      { name: "Pedro Lupion", org: "FPA", photo: "assets/img/palestrante-pedro.jpg" },
-      { name: "João Francisco Sanches Filho", org: "Integrada", photo: G },
-      { name: "Ágide Eduardo Meneguetti", org: "FAEP", photo: G },
-      { name: "Sérgio Bortolozzo", org: "SRB", photo: G },
-      { name: "Clauber Leite", org: "Instituto E+", photo: G },
-      { name: "Cassiano Ribeiro", org: "Empresa", photo: G },
-      { name: "Fernando Lopes", org: "FAEP", photo: G },
-      { name: "Fernando Lopes", org: "FAEP", photo: G },
-      { name: "Fernando Lopes", org: "FAEP", photo: G },
-      { name: "Fernando Lopes", org: "FAEP", photo: G },
+      {
+        name: "Angela Ruiz",
+        role: "Mediadora · Jornalista de agronegócios e clima",
+        photo: "assets/img/palestrantes/cutout/angela-ruiz.png",
+        logo: "assets/img/palestrantes/logos/angela-ruiz.jpg",
+        bio: "Jornalista especializada em agronegócios e clima, com MBA em Agronegócio pela Esalq/USP. Produz conteúdo digital agro multiplataforma para o site Agro e Prosa e para a Revista Negócio Rural. Atua como podcaster e desenvolve branded content para o setor e plataformas multimídia. Na Mecânica de Comunicação Assessoria, é responsável pelo desenvolvimento de novos negócios. Em 2025, foi eleita uma das TOP 10 jornalistas mais admiradas do agronegócio pelo Jornalistas e Cia.",
+      },
+      {
+        name: "Fernando Lopes",
+        role: "Mediador · Jornalista de agronegócios",
+        photo: "assets/img/palestrantes/cutout/fernando-lopes.png",
+        logo: "",
+        bio: "Jornalista especializado em agronegócios e sócio-fundador do portal de notícias NPagro, lançado em janeiro de 2025. Anteriormente, trabalhou por 23 anos no jornal Valor Econômico, onde foi editor da seção de Agronegócios por 21 anos, além de um ano no portal InfoMoney.",
+      },
+      {
+        name: "Patrícia Arantes",
+        role: "Diretora Executiva · Sociedade Rural Brasileira",
+        photo: "assets/img/palestrantes/cutout/patricia-arantes.png",
+        logo: "",
+        bio: "Diretora Executiva da Sociedade Rural Brasileira. Mestrado em Direito, Justiça e Impactos na Economia pelo CEDES, com foco em competitividade no agronegócio. Autora do livro 'Análise Econômica do Agronegócio: competitividade no mercado agropecuário global'. Pós-graduada em Análise Econômica do Direito pela Universidade de Lisboa (FDUL). LLM em Direito Empresarial pela FGV. Pós-graduação em Ética Empresarial pela USP. Advogada especializada em agronegócio. Conselheira na FIEG e membro da Comissão Especial de Direito Agrário e do Agronegócio do Conselho Federal da OAB.",
+      },
+      // [PLACEHOLDER] demais palestrantes/painelistas - trocar conforme confirmação
+      { name: "A confirmar", role: "Palestrante", photo: G, logo: "", bio: "Mais um nome do time de palestrantes e painelistas da edição 2026. Bio e logo entram conforme a confirmação." },
+      { name: "A confirmar", role: "Painelista", photo: G, logo: "", bio: "Mais um nome do time de palestrantes e painelistas da edição 2026. Bio e logo entram conforme a confirmação." },
+      { name: "A confirmar", role: "Painelista", photo: G, logo: "", bio: "Mais um nome do time de palestrantes e painelistas da edição 2026. Bio e logo entram conforme a confirmação." },
     ];
-    const BIO_PLACEHOLDER =
-      "[PLACEHOLDER] Mini bio do palestrante entra aqui - cargo, trajetória e tema do painel na edição 2027.";
+
     (function renderSpeakers() {
-      const grid = document.getElementById("speakers-grid");
-      if (!grid) return;
-      grid.innerHTML = PALESTRANTES.map(
+      const track = document.getElementById("speakers-carousel");
+      if (!track) return;
+      const logoChip = (p) =>
+        p.logo
+          ? `<div class="absolute right-3 top-3 flex h-11 w-11 items-center justify-center rounded-lg bg-white/95 p-1.5 shadow-sm"><img src="${p.logo}" alt="${p.name} - instituição" class="max-h-full max-w-full object-contain" loading="lazy" /></div>`
+          : `<div class="absolute right-3 top-3 flex h-11 w-11 items-center justify-center rounded-lg border border-white/40 bg-white/15 text-[8px] font-semibold uppercase leading-tight text-white/80 backdrop-blur-sm">logo</div>`;
+      // placeholder ("A confirmar") -> silhueta sobre o fundo da marca (sem foto verde solta)
+      const media = (p) =>
+        p.photo === G
+          ? `<div class="flex h-full w-full items-center justify-center"><svg aria-hidden="true" class="h-24 w-24 text-mint/25" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-5 0-9 2.5-9 6v2h18v-2c0-3.5-4-6-9-6z"/></svg></div>`
+          : `<img src="${p.photo}" alt="${p.name}" loading="lazy" class="h-full w-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-105" />`;
+
+      track.innerHTML = PALESTRANTES.map(
         (p, i) => `
-        <article class="group reveal relative cursor-pointer rounded-2xl bg-white p-1.5 shadow-card transition-colors duration-300 hover:bg-secondary"
-                 data-speaker data-name="${p.name}" data-org="${p.org}" data-bio="${BIO_PLACEHOLDER}" data-photo="${p.photo}"
-                 data-delay="${(i % 4) + 1}" role="button" tabindex="0"
-                 aria-label="Ver mais sobre ${p.name}">
-          <div class="overflow-hidden rounded-xl bg-surface">
-            <img src="${p.photo}" alt="${p.name}" loading="lazy" class="aspect-[4/5] w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" />
+        <article class="speaker-card group relative w-[260px] shrink-0 cursor-pointer snap-start overflow-hidden rounded-2xl bg-gradient-to-b from-secondary to-accent shadow-card"
+                 data-speaker data-idx="${i}" role="button" tabindex="0" aria-label="Ver mais sobre ${p.name}">
+          <div class="relative aspect-[3/4] w-full overflow-hidden">
+            ${media(p)}
+            <!-- fundo único do evento sobre a foto (padroniza o tom) -->
+            <div class="absolute inset-0 bg-secondary/15 mix-blend-multiply"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-accent via-accent/35 to-transparent"></div>
+            ${logoChip(p)}
+            <div class="absolute inset-x-0 bottom-0 p-4">
+              <h3 class="font-display text-lg leading-tight text-mint">${p.name}</h3>
+              <p class="mt-1 font-body text-[11px] uppercase tracking-wide text-lime">${p.role}</p>
+            </div>
+            <span class="absolute bottom-4 right-4 flex h-8 w-8 items-center justify-center rounded-full border border-mint/60 text-mint transition-colors duration-300 group-hover:border-transparent group-hover:bg-lime group-hover:text-accent"><svg aria-hidden="true" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg></span>
           </div>
-          <div class="px-3 pb-2 pr-10 pt-4">
-            <h3 class="font-display text-base leading-tight text-accent transition-colors duration-300 group-hover:text-mint">${p.name}</h3>
-            <p class="mt-1.5 font-body text-[11px] uppercase tracking-wide text-secondary transition-colors duration-300 group-hover:text-mint/70">${p.org}</p>
-          </div>
-          <span class="absolute bottom-4 right-4 flex h-8 w-8 items-center justify-center rounded-full border border-secondary text-secondary transition-colors duration-300 group-hover:border-transparent group-hover:bg-mint group-hover:text-secondary"><svg aria-hidden="true" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg></span>
         </article>`
       ).join("");
+
+      // injeta dados no dataset (evita problemas de escape em aspas/acentos)
+      track.querySelectorAll("[data-speaker]").forEach((card) => {
+        const p = PALESTRANTES[+card.dataset.idx];
+        card.dataset.name = p.name;
+        card.dataset.org = p.role;
+        card.dataset.bio = p.bio;
+        card.dataset.photo = p.photo;
+      });
       // acessibilidade: Enter/Espaço abrem o card
-      grid.querySelectorAll("[data-speaker]").forEach((card) =>
+      track.querySelectorAll("[data-speaker]").forEach((card) =>
         card.addEventListener("keydown", (e) => {
           if (e.key === "Enter" || e.key === " ") { e.preventDefault(); card.click(); }
         })
       );
-    })();
-  </script>
-
-  <!-- patrocinadores: logos reais do site atual, renderizadas nas duas versões -->
-  <script>
-    const SP = "assets/img/sponsors/";
-    // [PLACEHOLDER] cotas/logos da edição anterior (2025) como exemplo
-    // cada sub-array = uma LINHA; cotas na mesma linha ficam lado a lado (compacta a altura)
-    const SPONSOR_ROWS = [
-      [ { label: "Realização", h: 80, logos: [["Sociedade Rural do Paraná", "realizacao__srp"]] } ],
-      [ { label: "Estado Anfitrião", h: 58, logos: [["Governo do Paraná", "estado__parana"]] },
-        { label: "Patrocínio Master", h: 58, logos: [["FAEP", "master__faep"], ["Sanepar", "master__sanepar"]] } ],
-      [ { label: "Premium", h: 53, logos: [["Cresol", "premium__cresol"]] },
-        { label: "Plus", h: 53, logos: [["Integrada", "plus__integrada"]] },
-        { label: "Patrocínio Happy Hour", h: 48, logos: [["Armazém Fênix", "happyhour__armazem_fenix"]] } ],
-      [ { label: "Partner", h: 46, logos: [["Credi Aliança", "partner__credialianca"], ["Grupo Marajó", "partner__marajo"], ["Sicoob", "partner__sicoob"], ["Midiograf", "partner__midiograf"]] },
-        { label: "Apoio", h: 48, logos: [["Sebrae", "apoio__sebrae"], ["Governo do Estado / Turismo", "apoio__governo_turismo"]] } ],
-      [ { label: "Parceiro de Mídia", h: 41, logos: [["CBN Londrina", "midia__cbn"], ["Folha de Londrina", "midia__folha"], ["JP News", "midia__jpnews"], ["RIC", "midia__ric"], ["Massa FM", "midia__massafm"], ["Rede Massa", "midia__redemassa"], ["Paiquerê 91,7", "midia__paiquere"]] } ],
-      [ { label: "Hotel Parceiro", h: 38, logos: [["Comfort Suítes", "hotel__comfort"], ["Hotel Boulevard", "hotel__boulevard"], ["Hotel Crystal", "hotel__crystal"], ["Cedro Hotel", "hotel__cedro"]] } ],
-    ];
-    (function renderSponsors() {
-      const light = document.getElementById("sponsors-light");
-      const dark = document.getElementById("sponsors-dark");
-      if (!light || !dark) return;
-      const eyebrow = (txt, cls) =>
-        `<p class="mb-3 text-center font-body text-[11px] uppercase tracking-[0.2em] ${cls}">${txt}</p>`;
-      // bloco de uma cota (eyebrow + logos)
-      const lightCota = (t) => `
-        <div class="flex flex-col items-center">
-          ${eyebrow(t.label, "text-on-surface/60")}
-          <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
-            ${t.logos.map(([n, f]) => `<img src="${SP}${f}.webp" alt="${n}" loading="lazy" class="w-auto object-contain transition-opacity hover:opacity-60" style="height:${t.h}px" />`).join("")}
-          </div>
-        </div>`;
-      const darkCota = (t) => `
-        <div class="flex flex-col items-center">
-          ${eyebrow(t.label, "text-slate-400")}
-          <div class="flex flex-wrap items-center justify-center gap-3">
-            ${t.logos.map(([n, f]) => `<div class="flex h-16 w-36 items-center justify-center rounded-lg bg-white px-3"><img src="${SP}${f}.webp" alt="${n}" loading="lazy" class="max-h-11 max-w-full w-auto object-contain" /></div>`).join("")}
-          </div>
-        </div>`;
-      // uma linha com 1+ cotas lado a lado (empilha no mobile)
-      const row = (cells, cls) =>
-        `<div class="${cls} flex flex-col flex-wrap items-center justify-center gap-x-16 gap-y-7 sm:flex-row sm:items-start">${cells}</div>`;
-
-      light.innerHTML = SPONSOR_ROWS.map((r) => row(r.map(lightCota).join(""), "reveal")).join("");
-      dark.innerHTML = SPONSOR_ROWS.map((r) => row(r.map(darkCota).join(""), "")).join("");
     })();
   </script>
 

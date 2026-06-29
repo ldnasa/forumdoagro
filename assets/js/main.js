@@ -6,12 +6,12 @@
 /* --------------------------------------------------------------------------
    FLAGS DE CONTROLE
    -------------------------------------------------------------------------- */
-// true  = barra do contador mostra o botão "Garantir ingresso" ao lado.
-// false = barra mostra só o contador (vendas ainda não abertas).
+// true  = mostra o botão "Garantir ingresso" junto ao contador (vendas abertas).
+// false = vendas ainda não abertas. (Hoje o CTA do header é fixo; flag reservada.)
 const vendasAbertas = false;
 
-// [PLACEHOLDER] data-alvo do contador regressivo (edição 2027)
-const DATA_EVENTO = "2027-09-04T09:00:00";
+// data-alvo do contador regressivo (edição 2026)
+const DATA_EVENTO = "2026-09-03T09:00:00";
 
 const prefersReduced =
   window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initSponsorsToggle();
   initProgramAccordion();
   initProgramTabs();
+  initCarousels();
   initHeroVideo();
 });
 
@@ -148,11 +149,12 @@ function initCountUp() {
 function initCountdown() {
   const target = new Date(DATA_EVENTO).getTime();
   const pad = (n) => String(n).padStart(2, "0");
-  // atualiza todos os dígitos (barra do topo + faixa de baixo) de uma vez
+  // o contador vive na barra fixa do header (versões lg e compacta compartilham
+  // os mesmos data-cd); atualiza todas as células de uma vez.
   const cells = document.querySelectorAll("[data-cd]");
   if (!cells.length) return;
 
-  // botão de ingresso do TOPO condicional à flag (a faixa de baixo tem CTA fixo)
+  // botão condicional à flag (reservado; o CTA do header é fixo)
   const topBtn = document.getElementById("countdown-cta");
   if (topBtn) topBtn.classList.toggle("hidden", !vendasAbertas);
 
@@ -168,20 +170,26 @@ function initCountdown() {
   };
   tick();
   setInterval(tick, 1000);
+}
 
-  // STATE CHANGE: a barra fina do topo some quando a faixa em destaque
-  // (acima do footer) entra na tela - o contador "desce" e vira faixa.
-  const bar = document.getElementById("countdown-bar");
-  if (!bar) return;
-  const band = document.getElementById("countdown-cta-band");
-  const updateBar = () => {
-    // faixa "apareceu" quando seu topo sobe acima de 75% da altura da tela
-    const bandVisible =
-      band && band.getBoundingClientRect().top < window.innerHeight * 0.75;
-    bar.classList.toggle("is-active", window.scrollY > 80 && !bandVisible);
-  };
-  updateBar();
-  window.addEventListener("scroll", updateBar, { passive: true });
+/* --------------------------------------------------------------------------
+   Carrosséis horizontais (palestrantes). Botões prev/next por data-carousel.
+   -------------------------------------------------------------------------- */
+function initCarousels() {
+  document.querySelectorAll("[data-carousel]").forEach((track) => {
+    const key = track.dataset.carousel;
+    const prev = document.querySelector('[data-carousel-prev="' + key + '"]');
+    const next = document.querySelector('[data-carousel-next="' + key + '"]');
+    const step = () => {
+      const card = track.querySelector(":scope > *");
+      const styles = getComputedStyle(track);
+      const gap = parseInt(styles.columnGap || styles.gap || "20", 10) || 20;
+      return card ? card.offsetWidth + gap : Math.round(track.clientWidth * 0.8);
+    };
+    const behavior = prefersReduced ? "auto" : "smooth";
+    if (prev) prev.addEventListener("click", () => track.scrollBy({ left: -step(), behavior }));
+    if (next) next.addEventListener("click", () => track.scrollBy({ left: step(), behavior }));
+  });
 }
 
 /* --------------------------------------------------------------------------
