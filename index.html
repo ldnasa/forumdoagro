@@ -66,7 +66,7 @@
         <div class="flex items-center">
           <nav class="hidden items-center gap-1 md:flex" aria-label="Navegação principal">
             <a href="programacao.html" class="rounded px-2.5 py-1 text-sm text-mint/85 transition-colors hover:text-lime">Programação</a>
-            <a href="index.html#palestrantes" class="rounded px-2.5 py-1 text-sm text-mint/85 transition-colors hover:text-lime">Palestrantes</a>
+            <a href="palestrantes.html" class="rounded px-2.5 py-1 text-sm text-mint/85 transition-colors hover:text-lime">Palestrantes</a>
             <a href="index.html#patrocinio" class="rounded px-2.5 py-1 text-sm text-mint/85 transition-colors hover:text-lime">Patrocínio</a>
             <a href="contato.html" class="rounded px-2.5 py-1 text-sm text-mint/85 transition-colors hover:text-lime">Contato</a>
           </nav>
@@ -109,7 +109,7 @@
     <div id="mobile-menu" class="mobile-menu mx-4 mt-2 rounded-lg bg-white/10 backdrop-blur-sm md:hidden">
       <nav class="flex flex-col p-2" aria-label="Navegação mobile">
         <a href="programacao.html" class="rounded px-3 py-3 text-sm text-mint hover:bg-white/10">Programação</a>
-        <a href="index.html#palestrantes" class="rounded px-3 py-3 text-sm text-mint hover:bg-white/10">Palestrantes</a>
+        <a href="palestrantes.html" class="rounded px-3 py-3 text-sm text-mint hover:bg-white/10">Palestrantes</a>
         <a href="index.html#patrocinio" class="rounded px-3 py-3 text-sm text-mint hover:bg-white/10">Patrocínio</a>
         <a href="contato.html" class="rounded px-3 py-3 text-sm text-mint hover:bg-white/10">Contato</a>
       </nav>
@@ -141,9 +141,14 @@
             O agro que <span class="text-lime">produz, conecta e inspira</span>
           </h1>
 
+          <!-- [REVISÃO 01/07] data com mais destaque - tarja própria, ref inspiração do cliente -->
+          <div class="inline-flex items-center gap-2 rounded-full bg-lime px-5 py-2.5 font-display text-sm uppercase tracking-[0.06em] text-accent shadow-card md:text-base">
+            <svg aria-hidden="true" class="h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+            03 de setembro de 2026
+          </div>
+
           <p class="font-display text-base text-slate-100 md:text-xl">
-            <span class="text-lime">03 de setembro de 2026</span>
-            <span class="mx-2 text-slate-400">·</span> Parque Ney Braga Eventos
+            Parque Ney Braga Eventos
             <span class="mx-2 text-slate-400">·</span> Londrina - PR
           </p>
 
@@ -151,7 +156,7 @@
             <a href="ingressos.html" class="rounded-full bg-primary px-8 py-4 font-display text-base uppercase tracking-[0.06em] text-white shadow-card transition-transform hover:scale-[1.03]">
               Garanta seu ingresso
             </a>
-            <a href="#patrocinio" class="rounded-full border border-mint/60 bg-mint/10 px-8 py-4 font-display text-base uppercase tracking-[0.06em] text-mint backdrop-blur-sm transition-colors hover:bg-mint/20">
+            <a href="contato.html#patrocinio" class="rounded-full border border-mint/60 bg-mint/10 px-8 py-4 font-display text-base uppercase tracking-[0.06em] text-mint backdrop-blur-sm transition-colors hover:bg-mint/20">
               Seja patrocinador
             </a>
           </div>
@@ -171,30 +176,31 @@
           <h2 class="mt-2 font-display text-3xl text-mint md:text-4xl">O Fórum em números</h2>
         </div>
 
-        <!-- cards imersivos (imagem full-bleed + número sobre a foto, ref CMO Summit) -->
-        <div class="grid gap-5 sm:grid-cols-3">
-          <article class="card-hover reveal relative overflow-hidden rounded-xl" data-delay="1">
+        <!-- cards imersivos (imagem full-bleed + número sobre a foto, ref CMO Summit)
+             [REVISÃO 01/07 v3] largura total da seção, altura +30% (aspect 16/9) -->
+        <div class="grid gap-4 sm:grid-cols-3">
+          <article class="card-hover reveal relative overflow-hidden rounded-lg" data-delay="1">
             <img src="assets/img/site/numeros-participantes.jpg" alt="Participantes em edições anteriores" loading="lazy" class="absolute inset-0 h-full w-full object-cover" />
             <div class="absolute inset-0 bg-gradient-to-t from-accent via-accent/75 to-accent/30"></div>
-            <div class="relative flex aspect-[4/5] flex-col items-center justify-center px-5 text-center">
-              <p class="font-display text-5xl text-lime drop-shadow-lg md:text-6xl" data-countup="2300" data-prefix="+">+0</p>
-              <p class="mt-2 max-w-[16ch] font-body text-sm font-semibold text-mint">Participantes</p>
+            <div class="relative flex aspect-[16/9] flex-col items-center justify-center px-3 text-center">
+              <p class="font-display text-4xl text-lime drop-shadow-lg md:text-5xl" data-countup="2300" data-prefix="+">+0</p>
+              <p class="mt-1 max-w-[20ch] font-body text-sm font-semibold text-mint">Participantes</p>
             </div>
           </article>
-          <article class="card-hover reveal relative overflow-hidden rounded-xl" data-delay="2">
+          <article class="card-hover reveal relative overflow-hidden rounded-lg" data-delay="2">
             <img src="assets/img/site/numeros-palestrantes.jpg" alt="Palestrantes e painelistas em edições anteriores" loading="lazy" class="absolute inset-0 h-full w-full object-cover" />
             <div class="absolute inset-0 bg-gradient-to-t from-accent via-accent/75 to-accent/30"></div>
-            <div class="relative flex aspect-[4/5] flex-col items-center justify-center px-5 text-center">
-              <p class="font-display text-5xl text-lime drop-shadow-lg md:text-6xl" data-countup="60" data-prefix="+">+0</p>
-              <p class="mt-2 max-w-[16ch] font-body text-sm font-semibold text-mint">Palestrantes e painelistas</p>
+            <div class="relative flex aspect-[16/9] flex-col items-center justify-center px-3 text-center">
+              <p class="font-display text-4xl text-lime drop-shadow-lg md:text-5xl" data-countup="60" data-prefix="+">+0</p>
+              <p class="mt-1 max-w-[20ch] font-body text-sm font-semibold text-mint">Palestrantes e painelistas</p>
             </div>
           </article>
-          <article class="card-hover reveal relative overflow-hidden rounded-xl" data-delay="3">
+          <article class="card-hover reveal relative overflow-hidden rounded-lg" data-delay="3">
             <img src="assets/img/site/numeros-patrocinadores.jpg" alt="Patrocinadores e parceiros em edições anteriores" loading="lazy" class="absolute inset-0 h-full w-full object-cover" />
             <div class="absolute inset-0 bg-gradient-to-t from-accent via-accent/75 to-accent/30"></div>
-            <div class="relative flex aspect-[4/5] flex-col items-center justify-center px-5 text-center">
-              <p class="font-display text-5xl text-lime drop-shadow-lg md:text-6xl" data-countup="50" data-prefix="+">+0</p>
-              <p class="mt-2 max-w-[18ch] font-body text-sm font-semibold text-mint">Patrocinadores e parceiros institucionais</p>
+            <div class="relative flex aspect-[16/9] flex-col items-center justify-center px-3 text-center">
+              <p class="font-display text-4xl text-lime drop-shadow-lg md:text-5xl" data-countup="50" data-prefix="+">+0</p>
+              <p class="mt-1 max-w-[20ch] font-body text-sm font-semibold text-mint">Patrocinadores e parceiros institucionais</p>
             </div>
           </article>
         </div>
@@ -273,18 +279,35 @@
                 <th class="px-5 py-4">Atividade</th>
               </tr>
             </thead>
+            <!-- [REVISÃO 01/07] tabela expandida com todos os horários/painéis (igual à programação completa) -->
             <tbody class="font-body text-accent">
               <tr class="border-t border-border">
                 <td class="px-5 py-4 font-display text-lg text-secondary">08h00</td>
                 <td class="px-5 py-4">Credenciamento e recepção</td>
               </tr>
               <tr class="border-t border-border">
+                <td class="px-5 py-4 font-display text-lg text-secondary">09h10</td>
+                <td class="px-5 py-4">Abertura oficial</td>
+              </tr>
+              <tr class="border-t border-border">
                 <td class="px-5 py-4 font-display text-lg text-secondary">09h45</td>
                 <td class="px-5 py-4"><span class="font-semibold">Painel 1</span> - Brasil como potência agro: o que define os próximos anos</td>
               </tr>
               <tr class="border-t border-border">
+                <td class="px-5 py-4 font-display text-lg text-secondary">11h00</td>
+                <td class="px-5 py-4"><span class="font-semibold">Painel 2</span> - Rastreabilidade nas cadeias agroalimentares</td>
+              </tr>
+              <tr class="border-t border-border">
                 <td class="px-5 py-4 font-display text-lg text-secondary">12h00</td>
                 <td class="px-5 py-4">Almoço e networking</td>
+              </tr>
+              <tr class="border-t border-border">
+                <td class="px-5 py-4 font-display text-lg text-secondary">14h15</td>
+                <td class="px-5 py-4"><span class="font-semibold">Painel 3</span> - Clima, carbono e sustentabilidade: da pressão à oportunidade</td>
+              </tr>
+              <tr class="border-t border-border">
+                <td class="px-5 py-4 font-display text-lg text-secondary">15h30</td>
+                <td class="px-5 py-4"><span class="font-semibold">Painel 4</span> - Comunicação: quem conta a história do agro?</td>
               </tr>
               <tr class="border-t border-border bg-secondary text-white">
                 <td class="px-5 py-4 font-display text-lg text-lime">16h45</td>
@@ -312,8 +335,8 @@
           <article class="reveal group relative overflow-hidden rounded-2xl shadow-card">
             <img src="assets/img/site/ingressos.jpg" alt="" aria-hidden="true" loading="lazy" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
             <div class="absolute inset-0 bg-gradient-to-t from-accent via-accent/85 to-accent/45"></div>
+            <!-- [REVISÃO 01/07] logo removida de cima da foto, a pedido do cliente -->
             <div class="relative flex min-h-[340px] flex-col items-start justify-end gap-3 p-8 md:p-10">
-              <img src="assets/logo-new-light.svg" alt="Fórum do Agronegócio" class="mb-1 h-12 w-auto" />
               <h2 id="ingressos" class="font-display text-2xl leading-tight text-mint md:text-3xl">Garanta seu ingresso para o Fórum 2026</h2>
               <p class="font-body text-base text-slate-200">Veja as opções e escolha o seu.</p>
               <a href="ingressos.html" class="mt-3 rounded-full bg-primary px-7 py-3.5 font-display text-sm uppercase tracking-wide text-white transition-transform hover:scale-[1.03]">Ver ingressos</a>
@@ -342,8 +365,13 @@
       <div class="mx-auto max-w-content px-4 text-center md:px-8">
         <p class="reveal font-body text-[11px] uppercase tracking-[0.2em] text-on-surface/60">Realização</p>
         <h2 class="reveal mt-2 font-display text-3xl text-accent md:text-4xl" data-delay="1">Quem constrói o Fórum</h2>
-        <div class="reveal mt-5 flex justify-center" data-delay="2">
+        <div class="reveal mt-5 flex flex-wrap items-center justify-center gap-6" data-delay="2">
           <img src="assets/img/sponsors/realizacao__srp.webp" alt="Sociedade Rural do Paraná" loading="lazy" class="h-32 w-auto object-contain md:h-36" />
+          <!-- selo "80 anos" minimalista em CSS - a trocar se o cliente enviar arte oficial -->
+          <div class="flex h-24 w-24 flex-col items-center justify-center rounded-full border-2 border-primary/60 text-primary md:h-28 md:w-28">
+            <span class="font-display text-2xl leading-none md:text-3xl">80</span>
+            <span class="mt-1 font-body text-[10px] uppercase tracking-[0.15em]">anos</span>
+          </div>
         </div>
         <!-- [PLACEHOLDER] Demais cotas (Master, Premium, Plus, Apoio, Mídia, Hotéis)
              entram aqui conforme confirmadas. Layout em versão clara. -->
@@ -379,8 +407,9 @@
             </p>
           </div>
           <div class="flex flex-wrap gap-3">
-            <a href="https://waze.com/ul" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full bg-[#009dca] px-4 py-2 font-display text-xs uppercase tracking-wide text-white"><img src="assets/img/waze.svg" alt="" aria-hidden="true" class="h-4 w-4" />Waze</a>
-            <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full border border-border bg-white px-4 py-2 font-display text-xs uppercase tracking-wide text-accent"><img src="assets/img/google-maps.svg" alt="" aria-hidden="true" class="h-4 w-auto" />Google Maps</a>
+            <!-- [REVISÃO 01/07] links corrigidos para apontar direto ao endereço -->
+            <a href="https://waze.com/ul?q=Av.%20Tiradentes%2C%206275%2C%20Londrina%20-%20PR&navigate=yes" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full bg-[#009dca] px-4 py-2 font-display text-xs uppercase tracking-wide text-white"><img src="assets/img/waze.svg" alt="" aria-hidden="true" class="h-4 w-4" />Waze</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Av.+Tiradentes%2C+6275+-+Jardim+Rosicler%2C+Londrina+-+PR%2C+86072-000" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full border border-border bg-white px-4 py-2 font-display text-xs uppercase tracking-wide text-accent"><img src="assets/img/google-maps.svg" alt="" aria-hidden="true" class="h-4 w-auto" />Google Maps</a>
           </div>
         </div>
         <div class="reveal" data-delay="1">
@@ -403,26 +432,26 @@
         </div>
         <nav class="flex flex-wrap items-center justify-center gap-x-8 gap-y-2" aria-label="Navegação do rodapé">
           <a href="programacao.html" class="text-sm text-mint transition-opacity hover:opacity-70">Programação</a>
-          <a href="index.html#palestrantes" class="text-sm text-mint transition-opacity hover:opacity-70">Palestrantes</a>
-          <a href="index.html#patrocinio" class="text-sm text-mint transition-opacity hover:opacity-70">Patrocínio</a>
+          <a href="palestrantes.html" class="text-sm text-mint transition-opacity hover:opacity-70">Palestrantes</a>
+          <a href="contato.html#patrocinio" class="text-sm text-mint transition-opacity hover:opacity-70">Patrocínio</a>
           <a href="contato.html" class="text-sm text-mint transition-opacity hover:opacity-70">Contato</a>
         </nav>
-        <!-- redes sociais SRP. [CONFERIR] handles oficiais da Sociedade Rural do Paraná -->
+        <!-- [REVISÃO 01/07] redes sociais SRP - URLs corrigidas pelo cliente -->
         <div class="flex items-center gap-3">
-          <a href="https://www.instagram.com/sociedaderuraldoparana" target="_blank" rel="noopener noreferrer" aria-label="Instagram da SRP" class="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-mint transition-colors hover:border-lime hover:text-lime">
+          <a href="https://www.instagram.com/srp_oficial/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da SRP" class="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-mint transition-colors hover:border-lime hover:text-lime">
             <svg aria-hidden="true" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
           </a>
-          <a href="https://www.facebook.com/sociedaderuraldoparana" target="_blank" rel="noopener noreferrer" aria-label="Facebook da SRP" class="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-mint transition-colors hover:border-lime hover:text-lime">
+          <a href="https://www.facebook.com/sociedaderuralpr?locale=pt_BR" target="_blank" rel="noopener noreferrer" aria-label="Facebook da SRP" class="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-mint transition-colors hover:border-lime hover:text-lime">
             <svg aria-hidden="true" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
           </a>
-          <a href="https://www.linkedin.com/company/sociedade-rural-do-parana" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn da SRP" class="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-mint transition-colors hover:border-lime hover:text-lime">
+          <a href="https://br.linkedin.com/company/sociedaderuralpr" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn da SRP" class="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-mint transition-colors hover:border-lime hover:text-lime">
             <svg aria-hidden="true" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
           </a>
         </div>
       </div>
       <div class="flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 md:flex-row">
         <p class="font-body text-xs text-slate-400">© 2026 Fórum do Agronegócio · Realização Sociedade Rural do Paraná</p>
-        <a href="https://www.ldnasa.com.br" target="_blank" rel="noopener noreferrer" aria-label="LDNA S/A - Agência Digital">
+        <a href="https://www.londrinasa.com.br/" target="_blank" rel="noopener noreferrer" aria-label="LDNA S/A - Agência Digital">
           <img src="assets/logo-ldnasa-footer.svg" alt="LDNA S/A - Agência Digital" class="h-8 w-auto" />
         </a>
       </div>
@@ -463,6 +492,7 @@
         bio: "Jornalista especializada em agronegócios e clima, com MBA em Agronegócio pela Esalq/USP. Produz conteúdo digital agro multiplataforma para o site Agro e Prosa e para a Revista Negócio Rural. Atua como podcaster e desenvolve branded content para o setor e plataformas multimídia. Na Mecânica de Comunicação Assessoria, é responsável pelo desenvolvimento de novos negócios. Em 2025, foi eleita uma das TOP 10 jornalistas mais admiradas do agronegócio pelo Jornalistas e Cia.",
       },
       {
+        // [TODO] logo NPagro pendente (não veio em ajustes-site/, só citada no Drive) - trocar logo: "" pelo caminho do arquivo
         name: "Fernando Lopes",
         role: "Mediador · Jornalista de agronegócios",
         photo: "assets/img/palestrantes/cutout/fernando-lopes.png",
@@ -470,15 +500,23 @@
         bio: "Jornalista especializado em agronegócios e sócio-fundador do portal de notícias NPagro, lançado em janeiro de 2025. Anteriormente, trabalhou por 23 anos no jornal Valor Econômico, onde foi editor da seção de Agronegócios por 21 anos, além de um ano no portal InfoMoney.",
       },
       {
+        // [TODO] logo Sociedade Rural Brasileira pendente (não veio em ajustes-site/, só citada no Drive) - trocar logo: "" pelo caminho do arquivo
         name: "Patrícia Arantes",
-        role: "Diretora Executiva · Sociedade Rural Brasileira",
+        role: "Mediadora · Diretora Executiva da Sociedade Rural Brasileira",
         photo: "assets/img/palestrantes/cutout/patricia-arantes.png",
         logo: "",
         bio: "Diretora Executiva da Sociedade Rural Brasileira. Mestrado em Direito, Justiça e Impactos na Economia pelo CEDES, com foco em competitividade no agronegócio. Autora do livro 'Análise Econômica do Agronegócio: competitividade no mercado agropecuário global'. Pós-graduada em Análise Econômica do Direito pela Universidade de Lisboa (FDUL). LLM em Direito Empresarial pela FGV. Pós-graduação em Ética Empresarial pela USP. Advogada especializada em agronegócio. Conselheira na FIEG e membro da Comissão Especial de Direito Agrário e do Agronegócio do Conselho Federal da OAB.",
       },
+      {
+        // [TODO] foto, bio e logo do Airton Galinari pendentes - cliente só confirmou o nome até agora
+        name: "Airton Galinari",
+        role: "Painelista",
+        photo: G,
+        logo: "",
+        bio: "Painelista confirmado para a edição 2026. Bio, foto e logo entram conforme a confirmação do cliente.",
+      },
       // [PLACEHOLDER] demais palestrantes/painelistas - trocar conforme confirmação
       { name: "A confirmar", role: "Palestrante", photo: G, logo: "", bio: "Mais um nome do time de palestrantes e painelistas da edição 2026. Bio e logo entram conforme a confirmação." },
-      { name: "A confirmar", role: "Painelista", photo: G, logo: "", bio: "Mais um nome do time de palestrantes e painelistas da edição 2026. Bio e logo entram conforme a confirmação." },
       { name: "A confirmar", role: "Painelista", photo: G, logo: "", bio: "Mais um nome do time de palestrantes e painelistas da edição 2026. Bio e logo entram conforme a confirmação." },
     ];
 

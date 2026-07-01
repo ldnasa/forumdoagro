@@ -3,24 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ingressos - Fórum do Agronegócio 2026</title>
-  <meta name="description" content="Ingressos do Fórum do Agronegócio 2026. Sócio SRP, Não-Sócio e Empresarial. Escolha seu ingresso e participe - 03 de setembro, Londrina - PR." />
+  <title>Palestrantes - Fórum do Agronegócio 2026</title>
+  <meta name="description" content="Palestrantes, mediadores e painelistas confirmados no Fórum do Agronegócio 2026 - 03 de setembro, Londrina - PR." />
 
+  <!-- Google Fonts: Special Gothic Expanded One (títulos) + Bricolage Grotesque (corpo) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet" />
 
+  <!-- Tailwind via CDN (protótipo de aprovação; devs trocam por build em produção) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            primary: "#8D4A2A", secondary: "#3A6F98", accent: "#04223A",
-            background: "#EEF3F8", mint: "#EEF4FB", surface: "#f1f5f9",
-            border: "#d9d9d9", lime: "#E08B4F", "on-surface": "#475569",
-            slate: { 900: "#0F172A", 600: "#475569", 400: "#94A3B8", 300: "#CBD5E1", 200: "#E2E8F0", 100: "#F1F5F9" },
-            "prog-mint": "#DDE9F3", "prog-teal": "#1E3E5A", "prog-mid": "#3A6F98",
+            primary: "#8D4A2A",
+            secondary: "#3A6F98",
+            accent: "#04223A",
+            background: "#EEF3F8",
+            mint: "#EEF4FB",
+            surface: "#f1f5f9",
+            border: "#d9d9d9",
+            lime: "#E08B4F",
+            "on-surface": "#475569",
+            slate: {
+              900: "#0F172A", 600: "#475569", 400: "#94A3B8",
+              300: "#CBD5E1", 200: "#E2E8F0", 100: "#F1F5F9",
+            },
+            "prog-mint": "#DDE9F3",
+            "prog-teal": "#1E3E5A",
+            "prog-mid": "#3A6F98",
           },
           fontFamily: {
             display: ['"Special Gothic Expanded One"', "system-ui", "sans-serif"],
@@ -48,7 +61,7 @@
         <div class="flex items-center">
           <nav class="hidden items-center gap-1 md:flex" aria-label="Navegação principal">
             <a href="programacao.html" class="rounded px-2.5 py-1 text-sm text-mint/85 transition-colors hover:text-lime">Programação</a>
-            <a href="palestrantes.html" class="rounded px-2.5 py-1 text-sm text-mint/85 transition-colors hover:text-lime">Palestrantes</a>
+            <a href="palestrantes.html" class="rounded px-2.5 py-1 text-sm font-semibold text-lime" aria-current="page">Palestrantes</a>
             <a href="index.html#patrocinio" class="rounded px-2.5 py-1 text-sm text-mint/85 transition-colors hover:text-lime">Patrocínio</a>
             <a href="contato.html" class="rounded px-2.5 py-1 text-sm text-mint/85 transition-colors hover:text-lime">Contato</a>
           </nav>
@@ -87,7 +100,7 @@
     <div id="mobile-menu" class="mobile-menu mx-4 mt-2 rounded-lg bg-white/10 backdrop-blur-sm md:hidden">
       <nav class="flex flex-col p-2" aria-label="Navegação mobile">
         <a href="programacao.html" class="rounded px-3 py-3 text-sm text-mint hover:bg-white/10">Programação</a>
-        <a href="palestrantes.html" class="rounded px-3 py-3 text-sm text-mint hover:bg-white/10">Palestrantes</a>
+        <a href="palestrantes.html" class="rounded px-3 py-3 text-sm font-semibold text-lime" aria-current="page">Palestrantes</a>
         <a href="index.html#patrocinio" class="rounded px-3 py-3 text-sm text-mint hover:bg-white/10">Patrocínio</a>
         <a href="contato.html" class="rounded px-3 py-3 text-sm text-mint hover:bg-white/10">Contato</a>
       </nav>
@@ -96,69 +109,27 @@
 
   <main>
     <!-- ==================================================================
-         Cabeçalho
+         Cabeçalho da página
+         [REVISÃO 01/07] página exclusiva para palestrantes, ref. estrutura
+         da página de Programação. Grid completo (não rotativo como na home).
          ================================================================== -->
     <section class="bg-accent pt-36 pb-14 md:pt-40 md:pb-20">
       <div class="mx-auto max-w-content px-4 md:px-8">
-        <p class="font-body text-sm uppercase tracking-[0.18em] text-lime">Sua experiência começa aqui</p>
-        <h1 class="mt-3 font-display text-4xl text-mint md:text-5xl">Ingressos</h1>
-        <p class="mt-4 max-w-2xl font-body text-base text-slate-300">Escolha seu ingresso e prepare-se para viver o Fórum do Agronegócio 2026.</p>
+        <p class="font-body text-sm uppercase tracking-[0.18em] text-lime">Quem sobe ao palco</p>
+        <h1 class="mt-3 font-display text-4xl text-mint md:text-5xl">Palestrantes</h1>
+        <p class="mt-4 max-w-2xl font-body text-base text-slate-300">Mediadores, palestrantes e painelistas confirmados para o Fórum do Agronegócio 2026.</p>
       </div>
     </section>
 
     <!-- ==================================================================
-         Cards de ingresso (Sócio SRP / Não-Sócio / Empresarial)
+         Grid completo de palestrantes
          ================================================================== -->
     <section class="py-14 md:py-20">
       <div class="mx-auto max-w-content px-4 md:px-8">
-        <div id="tickets-grid" class="grid gap-6 md:grid-cols-3">
+        <div id="palestrantes-grid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <!-- gerados via JS -->
         </div>
-        <p class="mt-6 font-body text-sm text-on-surface">Compra processada em ambiente externo, via <a href="https://www.sympla.com.br/evento/forum-do-agronegocio-2026/3484384" target="_blank" rel="noopener noreferrer" class="font-semibold text-secondary underline">Sympla</a> · Os valores de pré-venda mudam conforme o lote.</p>
-      </div>
-    </section>
-
-    <!-- ==================================================================
-         Benefícios (substitui o antigo bloco de happy hour)
-         ================================================================== -->
-    <section class="bg-accent py-16 md:py-24">
-      <div class="mx-auto max-w-content px-4 md:px-8">
-        <div class="reveal mx-auto max-w-2xl text-center">
-          <p class="font-body text-sm uppercase tracking-[0.18em] text-lime">O que está incluído</p>
-          <h2 class="mt-3 font-display text-3xl text-mint md:text-4xl">Todos os ingressos dão acesso a</h2>
-        </div>
-        <ul class="mx-auto mt-12 grid max-w-4xl gap-5 sm:grid-cols-2 lg:grid-cols-5">
-          <li class="reveal flex flex-col items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-6 text-center" data-delay="1">
-            <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-lime/15 text-lime">
-              <svg aria-hidden="true" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2"/><path d="M13 17v2"/><path d="M13 11v2"/></svg>
-            </span>
-            <span class="font-body text-sm font-semibold text-mint">Acesso a todos os painéis</span>
-          </li>
-          <li class="reveal flex flex-col items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-6 text-center" data-delay="2">
-            <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-lime/15 text-lime">
-              <svg aria-hidden="true" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v2"/><path d="M14 2v2"/><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path d="M6 2v2"/></svg>
-            </span>
-            <span class="font-body text-sm font-semibold text-mint">Coffee break</span>
-          </li>
-          <li class="reveal flex flex-col items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-6 text-center" data-delay="3">
-            <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-lime/15 text-lime">
-              <svg aria-hidden="true" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
-            </span>
-            <span class="font-body text-sm font-semibold text-mint">Almoço &amp; Networking</span>
-          </li>
-          <li class="reveal flex flex-col items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-6 text-center" data-delay="4">
-            <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-lime/15 text-lime">
-              <svg aria-hidden="true" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 22h8"/><path d="M12 11v11"/><path d="m19 3-7 8-7-8Z"/></svg>
-            </span>
-            <span class="font-body text-sm font-semibold text-mint">Happy Hour</span>
-          </li>
-          <li class="reveal flex flex-col items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-6 text-center sm:col-span-2 lg:col-span-1" data-delay="4">
-            <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-lime/15 text-lime">
-              <svg aria-hidden="true" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/><circle cx="12" cy="8" r="6"/></svg>
-            </span>
-            <span class="font-body text-sm font-semibold text-mint">Certificado de participação</span>
-          </li>
-        </ul>
+        <p class="reveal mt-8 font-body text-sm text-on-surface">Lista em atualização conforme novas confirmações da Sociedade Rural do Paraná.</p>
       </div>
     </section>
   </main>
@@ -166,7 +137,7 @@
   <!-- ====================================================================
        FOOTER (idêntico ao index)
        ==================================================================== -->
-  <footer id="rodape" class="bg-accent border-t border-white/10">
+  <footer id="rodape" class="bg-accent">
     <div class="mx-auto flex max-w-content flex-col gap-8 px-4 py-12 md:px-8">
       <div class="flex flex-col items-center gap-8 md:flex-row md:items-center md:justify-between">
         <div class="flex flex-col items-center gap-3 md:flex-row md:gap-5">
@@ -200,45 +171,108 @@
     </div>
   </footer>
 
-  <!-- dados dos ingressos (edição 2026) -> renderizados via JS -->
+  <!-- ====================================================================
+       MODAL DE PALESTRANTES (idêntico ao index)
+       ==================================================================== -->
+  <div id="speaker-modal" class="modal fixed inset-0 z-[60] flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="sm-name">
+    <div class="absolute inset-0 bg-accent/70 backdrop-blur-sm" data-close></div>
+    <div class="modal__panel relative flex w-full max-w-2xl flex-col gap-6 sm:min-h-[340px] sm:flex-row">
+      <div class="shrink-0 rounded-3xl bg-white p-1.5 shadow-2xl sm:w-52">
+        <img id="sm-photo" class="h-60 w-full rounded-2xl bg-surface object-cover sm:h-full" alt="" />
+      </div>
+      <div class="relative flex flex-1 flex-col justify-center rounded-3xl bg-white p-8 shadow-2xl">
+        <button class="absolute right-5 top-5 z-20 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-400 transition-colors hover:border-secondary hover:text-secondary" data-close aria-label="Fechar"><svg aria-hidden="true" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+        <h3 id="sm-name" class="pr-10 font-display text-2xl leading-tight text-accent"></h3>
+        <p id="sm-org" class="mt-1.5 font-body text-xs font-semibold uppercase tracking-[0.08em] text-primary"></p>
+        <p id="sm-bio" class="mt-4 font-body text-[13px] leading-[1.7] text-on-surface"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- dados dos palestrantes -> grid completo (mesma base do carrossel da home) -->
   <script>
-    // Preços de PRÉ-VENDA. [PLACEHOLDER de lote] - mudam conforme o lote (cliente avisa).
-    // [REVISÃO 01/07] link de compra real (Sympla) informado pelo cliente.
-    const SYMPLA_URL = "https://www.sympla.com.br/evento/forum-do-agronegocio-2026/3484384";
-    const INGRESSOS = [
+    // 3 confirmados (fotos/bios reais) + Airton Galinari (só nome, confirmado em 01/07)
+    // + placeholders para completar a lista. logo = caminho da logo da instituição. "" = placeholder.
+    const G = "assets/img/palestrante-generico.jpg";
+    const PALESTRANTES = [
       {
-        nome: "Ingresso Sócio SRP",
-        preco: "Gratuito",
-        free: true,
-        destaque: true,
-        nota: "Exclusivo para sócios da Sociedade Rural do Paraná.",
+        name: "Angela Ruiz",
+        role: "Mediadora · Jornalista de agronegócios e clima",
+        photo: "assets/img/palestrantes/cutout/angela-ruiz.png",
+        logo: "assets/img/palestrantes/logos/angela-ruiz.jpg",
+        bio: "Jornalista especializada em agronegócios e clima, com MBA em Agronegócio pela Esalq/USP. Produz conteúdo digital agro multiplataforma para o site Agro e Prosa e para a Revista Negócio Rural. Atua como podcaster e desenvolve branded content para o setor e plataformas multimídia. Na Mecânica de Comunicação Assessoria, é responsável pelo desenvolvimento de novos negócios. Em 2025, foi eleita uma das TOP 10 jornalistas mais admiradas do agronegócio pelo Jornalistas e Cia.",
       },
       {
-        nome: "Ingresso Não-Sócio",
-        preco: "R$ 249,00",
-        preVenda: true,
-        nota: "Acesso individual ao Fórum do Agronegócio 2026.",
+        // [TODO] logo NPagro pendente (não veio em ajustes-site/, só citada no Drive) - trocar logo: "" pelo caminho do arquivo
+        name: "Fernando Lopes",
+        role: "Mediador · Jornalista de agronegócios",
+        photo: "assets/img/palestrantes/cutout/fernando-lopes.png",
+        logo: "",
+        bio: "Jornalista especializado em agronegócios e sócio-fundador do portal de notícias NPagro, lançado em janeiro de 2025. Anteriormente, trabalhou por 23 anos no jornal Valor Econômico, onde foi editor da seção de Agronegócios por 21 anos, além de um ano no portal InfoMoney.",
       },
       {
-        nome: "Ingresso Empresarial",
-        preco: "R$ 219,00",
-        preVenda: true,
-        nota: "Condição válida para 4+ ingressos por CNPJ.",
+        // [TODO] logo Sociedade Rural Brasileira pendente (não veio em ajustes-site/, só citada no Drive) - trocar logo: "" pelo caminho do arquivo
+        name: "Patrícia Arantes",
+        role: "Mediadora · Diretora Executiva da Sociedade Rural Brasileira",
+        photo: "assets/img/palestrantes/cutout/patricia-arantes.png",
+        logo: "",
+        bio: "Diretora Executiva da Sociedade Rural Brasileira. Mestrado em Direito, Justiça e Impactos na Economia pelo CEDES, com foco em competitividade no agronegócio. Autora do livro 'Análise Econômica do Agronegócio: competitividade no mercado agropecuário global'. Pós-graduada em Análise Econômica do Direito pela Universidade de Lisboa (FDUL). LLM em Direito Empresarial pela FGV. Pós-graduação em Ética Empresarial pela USP. Advogada especializada em agronegócio. Conselheira na FIEG e membro da Comissão Especial de Direito Agrário e do Agronegócio do Conselho Federal da OAB.",
       },
+      {
+        // [TODO] foto, bio e logo do Airton Galinari pendentes - cliente só confirmou o nome até agora
+        name: "Airton Galinari",
+        role: "Painelista",
+        photo: G,
+        logo: "",
+        bio: "Painelista confirmado para a edição 2026. Bio, foto e logo entram conforme a confirmação do cliente.",
+      },
+      // [PLACEHOLDER] demais palestrantes/painelistas - trocar conforme confirmação
+      { name: "A confirmar", role: "Palestrante", photo: G, logo: "", bio: "Mais um nome do time de palestrantes e painelistas da edição 2026. Bio e logo entram conforme a confirmação." },
+      { name: "A confirmar", role: "Painelista", photo: G, logo: "", bio: "Mais um nome do time de palestrantes e painelistas da edição 2026. Bio e logo entram conforme a confirmação." },
     ];
-    (function renderTickets() {
-      const grid = document.getElementById("tickets-grid");
+
+    (function renderSpeakers() {
+      const grid = document.getElementById("palestrantes-grid");
       if (!grid) return;
-      grid.innerHTML = INGRESSOS.map((t, i) => `
-        <article class="card-hover reveal relative flex flex-col overflow-hidden rounded-2xl border ${t.destaque ? "border-primary" : "border-border"} bg-white p-7 shadow-card md:p-8" data-delay="${i + 1}">
-          ${t.preVenda ? '<span class="absolute right-4 top-4 rounded-full bg-lime/15 px-3 py-1 font-display text-[10px] uppercase tracking-wide text-primary">Pré-venda</span>' : ""}
-          ${t.destaque ? '<span class="absolute right-4 top-4 rounded-full bg-primary px-3 py-1 font-display text-[10px] uppercase tracking-wide text-white">Sócios</span>' : ""}
-          <h2 class="font-display text-xl text-accent">${t.nome}</h2>
-          <p class="mt-3 font-display ${t.free ? "text-3xl text-primary" : "text-4xl text-secondary"}">${t.preco}</p>
-          <p class="mt-3 flex-1 font-body text-sm leading-relaxed text-on-surface">${t.nota}</p>
-          <a href="${SYMPLA_URL}" target="_blank" rel="noopener noreferrer" class="mt-7 rounded-full ${t.destaque ? "bg-primary" : "bg-secondary"} px-6 py-3.5 text-center font-display text-sm uppercase tracking-wide text-white transition-transform hover:scale-[1.03]">${t.free ? "Garantir gratuito" : "Garantir ingresso"}</a>
+      const logoChip = (p) =>
+        p.logo
+          ? `<div class="absolute right-3 top-3 flex h-11 w-11 items-center justify-center rounded-lg bg-white/95 p-1.5 shadow-sm"><img src="${p.logo}" alt="${p.name} - instituição" class="max-h-full max-w-full object-contain" loading="lazy" /></div>`
+          : `<div class="absolute right-3 top-3 flex h-11 w-11 items-center justify-center rounded-lg border border-white/40 bg-white/15 text-[8px] font-semibold uppercase leading-tight text-white/80 backdrop-blur-sm">logo</div>`;
+      const media = (p) =>
+        p.photo === G
+          ? `<div class="flex h-full w-full items-center justify-center"><svg aria-hidden="true" class="h-24 w-24 text-mint/25" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-5 0-9 2.5-9 6v2h18v-2c0-3.5-4-6-9-6z"/></svg></div>`
+          : `<img src="${p.photo}" alt="${p.name}" loading="lazy" class="h-full w-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-105" />`;
+
+      grid.innerHTML = PALESTRANTES.map(
+        (p, i) => `
+        <article class="speaker-card group reveal relative cursor-pointer overflow-hidden rounded-2xl bg-gradient-to-b from-secondary to-accent shadow-card"
+                 data-speaker data-idx="${i}" role="button" tabindex="0" aria-label="Ver mais sobre ${p.name}">
+          <div class="relative aspect-[3/4] w-full overflow-hidden">
+            ${media(p)}
+            <div class="absolute inset-0 bg-secondary/15 mix-blend-multiply"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-accent via-accent/35 to-transparent"></div>
+            ${logoChip(p)}
+            <div class="absolute inset-x-0 bottom-0 p-4">
+              <h3 class="font-display text-lg leading-tight text-mint">${p.name}</h3>
+              <p class="mt-1 font-body text-[11px] uppercase tracking-wide text-lime">${p.role}</p>
+            </div>
+            <span class="absolute bottom-4 right-4 flex h-8 w-8 items-center justify-center rounded-full border border-mint/60 text-mint transition-colors duration-300 group-hover:border-transparent group-hover:bg-lime group-hover:text-accent"><svg aria-hidden="true" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg></span>
+          </div>
         </article>`
       ).join("");
+
+      grid.querySelectorAll("[data-speaker]").forEach((card) => {
+        const p = PALESTRANTES[+card.dataset.idx];
+        card.dataset.name = p.name;
+        card.dataset.org = p.role;
+        card.dataset.bio = p.bio;
+        card.dataset.photo = p.photo;
+      });
+      grid.querySelectorAll("[data-speaker]").forEach((card) =>
+        card.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") { e.preventDefault(); card.click(); }
+        })
+      );
     })();
   </script>
 

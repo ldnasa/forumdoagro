@@ -171,3 +171,46 @@ Pós-graduada em Análise Econômica do Direito (FDUL/Lisboa). LLM em Direito
 Empresarial (FGV). Pós em Ética Empresarial (USP). Advogada especializada em
 agronegócio. Conselheira na FIEG. Membro da Comissão Especial de Direito Agrário
 e do Agronegócio do Conselho Federal da OAB.
+
+---
+
+## REVISÃO 01/07 (implementada)
+
+Segunda rodada de ajustes do cliente, em cima da revisão 25/06 acima.
+
+- **Banner**: data em destaque numa tarja própria (antes dividia linha com o
+  local); "Seja patrocinador" agora aponta para `contato.html#patrocinio`.
+- **Fórum em números**: cards ocupam a largura total da seção, com altura
+  ajustada (aspect 16/9) - mais baixos que a versão anterior, mas sem ficar
+  apertados.
+- **Palestrantes**: Patrícia Arantes marcada como "Mediadora"; Airton Galinari
+  incluído na lista geral (sem painel específico, a pedido de Caio); tabela de
+  programação da home expandida com todos os horários/painéis (antes só
+  mostrava um recorte); foto da Angela Ruiz atualizada para corpo inteiro
+  (gerada via Freepik/Magnific a partir da foto original, com margem
+  transparente no topo para alinhar a altura do rosto com os demais cards).
+- **Ingressos + Patrocínios (home)**: logo do Fórum removida de cima da foto
+  do card de ingressos.
+- **Quem constrói o Fórum**: adicionado selo "80 anos" em CSS ao lado da logo
+  da SRP (placeholder até a arte oficial chegar; testamos uma versão em SVG
+  gerada via Magnific, mas o cliente preferiu manter o selo em CSS).
+- **Localização**: links de Waze e Google Maps agora apontam direto para o
+  endereço (Av. Tiradentes, 6275 - Jardim Rosicler, Londrina - PR).
+- **Rodapé**: redes sociais corrigidas (Instagram `srp_oficial`, Facebook
+  `sociedaderuralpr`, LinkedIn `sociedaderuralpr`); link da agência corrigido
+  para `londrinasa.com.br`; botão "Patrocínio" também aponta para
+  `contato.html#patrocinio`.
+- **Nova página `palestrantes.html`**: grid completo de todos os
+  palestrantes/mediadores/painelistas (menu "Palestrantes" agora leva pra cá
+  em vez de âncora na home).
+- **Ingressos**: link real do Sympla adicionado nos 3 CTAs de compra e na nota
+  de rodapé da seção.
+
+### Pendências (assets não enviados, só citados no link do Drive)
+- Logo do Fernando Lopes (NPagro).
+- Logo da Patrícia Arantes (Sociedade Rural Brasileira).
+- Foto, bio e logo do Airton Galinari (só o nome foi confirmado).
+- Arte oficial do selo de 80 anos da SRP (hoje há um placeholder em CSS).
+
+Todos os pontos acima estão marcados com comentários `[TODO]` no código, nos
+arquivos `index.html` e `palestrantes.html`.
