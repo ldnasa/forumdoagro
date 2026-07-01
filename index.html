@@ -370,7 +370,7 @@
           <!-- selo "80 anos" minimalista em CSS - a trocar se o cliente enviar arte oficial -->
           <div class="flex h-24 w-24 flex-col items-center justify-center rounded-full border-2 border-primary/60 text-primary md:h-28 md:w-28">
             <span class="font-display text-2xl leading-none md:text-3xl">80</span>
-            <span class="mt-1 font-body text-[10px] uppercase tracking-[0.15em]">anos</span>
+            <span class="font-body text-sm uppercase tracking-[0.15em] md:text-base">anos</span>
           </div>
         </div>
         <!-- [PLACEHOLDER] Demais cotas (Master, Premium, Plus, Apoio, Mídia, Hotéis)
@@ -394,7 +394,7 @@
          ================================================================== -->
     <section id="local" class="bg-background py-14 md:py-16">
       <div class="mx-auto grid max-w-content items-stretch gap-6 px-4 md:grid-cols-2 md:px-8">
-        <div class="reveal flex flex-col justify-center gap-4 rounded-2xl border border-border bg-mint p-6 md:p-8">
+        <div class="reveal flex flex-col justify-center gap-4 rounded-2xl border border-border bg-mint p-8 md:p-12">
           <h2 class="font-display text-2xl text-accent">Parque Ney Braga Eventos</h2>
           <div class="space-y-3 font-body">
             <p class="flex items-center gap-3 font-display text-base text-primary">
@@ -535,7 +535,7 @@
 
       track.innerHTML = PALESTRANTES.map(
         (p, i) => `
-        <article class="speaker-card group relative w-[260px] shrink-0 cursor-pointer snap-start overflow-hidden rounded-2xl bg-gradient-to-b from-secondary to-accent shadow-card"
+        <article class="speaker-card group relative w-[78%] shrink-0 cursor-pointer snap-start overflow-hidden rounded-2xl bg-gradient-to-b from-secondary to-accent shadow-card sm:w-[calc((100%-20px)/2)] md:w-[calc((100%-40px)/3)] lg:w-[calc((100%-60px)/4)]"
                  data-speaker data-idx="${i}" role="button" tabindex="0" aria-label="Ver mais sobre ${p.name}">
           <div class="relative aspect-[3/4] w-full overflow-hidden">
             ${media(p)}
@@ -543,7 +543,7 @@
             <div class="absolute inset-0 bg-secondary/15 mix-blend-multiply"></div>
             <div class="absolute inset-0 bg-gradient-to-t from-accent via-accent/35 to-transparent"></div>
             ${logoChip(p)}
-            <div class="absolute inset-x-0 bottom-0 p-4">
+            <div class="absolute inset-x-0 bottom-0 p-4 pr-14">
               <h3 class="font-display text-lg leading-tight text-mint">${p.name}</h3>
               <p class="mt-1 font-body text-[11px] uppercase tracking-wide text-lime">${p.role}</p>
             </div>
